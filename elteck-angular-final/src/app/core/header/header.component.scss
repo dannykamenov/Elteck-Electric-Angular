@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Space+Mono&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #24252a;
+  width: 100%;
+}
+
+.floating-info {
+  width: 100%;
+  height: 30px;
+  background-color: #fb804d;
+  align-items: center;
+}
+
+.email,
+.phone {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.email i,
+.phone i {
+  margin-right: 10px;
+}
+
+.contact-info {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: #24252a;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.logo {
+  cursor: pointer;
+  padding: 9px 25px;
+}
+
+.nav__links a,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  margin-left: -35px;
+}
+
+.nav__links li {
+  padding: 10px 40px;
+}
+
+.nav__links li a {
+  transition: color 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.cta {
+  padding: 9px 25px;
+  background-color: #fb804d;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.cta {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 1px black;
+}
+
+.cta:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #24252a;
+  overflow-x: hidden;
+  transition: width 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease 0s;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+}
+
+.overlay-cta {
+  margin-top: 100px;
+  padding: 9px 25px;
+  background-color: #fb804d;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 1px black;
+}
+
+.opacity {
+  opacity: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  .nav__links {
+    font-size: 15px;
+  }
+
+  .nav__links li {
+    padding: 5px 15px;
+    text-align: center;
+  }
+
+  .cta {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .logo {
+    margin-top: 5px;
+    margin-left: -20px;
+  }
+
+  .logo img {
+    width: 80%;
+  }
+
+  .contact-info {
+    width: 75%;
+  }
+
+  footer {
+    height: 100%;
+  }
+
+  .footer-info-holder {
+    width: 80%;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+
+  .footer-info-holder img {
+    flex-basis: 40%;
+  }
+
+  .footer-info-holder ul {
+    flex-basis: 40%;
+  }
+
+  .footer-info-holder > iframe {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+
+  .menu {
+    display: initial;
+  }
+
+  .logo {
+    margin-top: 5px;
+    margin-left: -20px;
+  }
+
+  .logo img {
+    width: 70%;
+  }
+
+  .contact-info {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .contact-info .email,
+  .phone {
+    font-size: 10px;
+    margin: 7px 0px;
+  }
+
+  .footer__links {
+    display: initial;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
