@@ -5,9 +5,9 @@
     /></a>
     <nav>
       <ul class="nav__links">
-        <li><a href="about-us1.html">About Us</a></li>
+        <li><a routerLink="/about">About Us</a></li>
         <li><a href="gallery1.html">Gallery</a></li>
-        <li><a href="contact-us1.html">Contact Us</a></li>
+        <li><a routerLink="/contact">Contact Us</a></li>
       </ul>
     </nav>
     <a
@@ -23,9 +23,9 @@
   <a class="close" (click)="menuToggle()" >&times;</a>
   <div class="overlay__content" [class.opacity]="opacityActive" >
     <a href="/"><img src="/assets/logos/LOGO.png" alt="" /></a>
-    <a href="about-us1.html">About Us</a>
+    <a routerLink="/about">About Us</a>
     <a href="gallery1.html">Gallery</a>
-    <a href="contact-us1.html">Contact Us</a>
+    <a routerLink="/contact">Contact Us</a>
     <a
       class="overlay-cta"
       href="https://calendly.com/elteck/30min?primary_color=fb804d"
