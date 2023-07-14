@@ -108,22 +108,22 @@
     <h1 class="what-we-do">WHAT WE DO</h1>
     <h2 class="what-we-do-desc">COMMERCIAL AND RESIDENTIAL</h2>
     <div class="services-box">
-      <div class="service-card">
-        <i class="fa-solid fa-bolt icon" style="color: #1eff00"></i>
+      <div class="service-card" (mouseover)="mouseOvered=true" (mouseout)="mouseOvered=false" >
+        <i class="fa-solid fa-bolt icon" style="color: #1eff00" [class.fa-beat-fade]="mouseOvered"></i>
         <h1 class="service-desc">
           Pot Lights <br />Indoor and Outdoor Lighting <br />Landscape Lighting
           <br />Specialty Lighting <br />Service Upgrades <br />EV Chargers
         </h1>
       </div>
-      <div class="service-card">
-        <i class="fa-solid fa-house-signal icon" style="color: white"></i>
+      <div class="service-card" (mouseover)="mouseOvered1=true" (mouseout)="mouseOvered1=false">
+        <i class="fa-solid fa-house-signal icon" style="color: white" [class.fa-beat-fade]="mouseOvered1"></i>
         <h1 class="service-desc">
           Minor and Major Renovations as well as New Builds
           <br /><br />Smart Home Automation and Retrofits
         </h1>
       </div>
-      <div class="service-card">
-        <i class="fa-solid fa-tools icon" style="color: #ff4949"></i>
+      <div class="service-card" (mouseover)="mouseOvered2=true" (mouseout)="mouseOvered2=false">
+        <i class="fa-solid fa-tools icon" style="color: #ff4949" [class.fa-beat-fade]="mouseOvered2"></i>
         <h1 class="service-desc">
           Troubleshooting <br />
           Consultations <br />
@@ -131,22 +131,22 @@
           Minor Upgrades
         </h1>
       </div>
-      <div class="service-card">
-        <i class="fa-solid fa-tools icon" style="color: #ff4949"></i>
+      <div class="service-card" (mouseover)="mouseOvered3=true" (mouseout)="mouseOvered3=false">
+        <i class="fa-solid fa-tools icon" style="color: #ff4949" [class.fa-beat-fade]="mouseOvered3"></i>
         <h1 class="service-desc">
           Installation of Panels<br />Transformers<br />Splitters and
           Disconnects
         </h1>
       </div>
-      <div class="service-card">
-        <i class="fa-solid fa-house-signal icon" style="color: white"></i>
+      <div class="service-card" (mouseover)="mouseOvered4=true" (mouseout)="mouseOvered4=false">
+        <i class="fa-solid fa-house-signal icon" style="color: white" [class.fa-beat-fade]="mouseOvered4"></i>
         <h1 class="service-desc">
           Equipment Power<br />Upgrades and Maintenance<br />Lighting
           Retrofits<br />Automation
         </h1>
       </div>
-      <div class="service-card">
-        <i class="fa-solid fa-bolt icon" style="color: #1eff00"></i>
+      <div class="service-card" (mouseover)="mouseOvered5=true" (mouseout)="mouseOvered5=false">
+        <i class="fa-solid fa-bolt icon" style="color: #1eff00" [class.fa-beat-fade]="mouseOvered5"></i>
         <h1 class="service-desc">
           Outdoor Lighting Installation<br />Maintenance<br />Troubleshooting<br />Consultations
         </h1>
