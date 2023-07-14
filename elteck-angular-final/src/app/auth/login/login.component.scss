@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Space+Mono&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Space+Mono&display=swap");
 
 main {
   font-family: "Montserrat", sans-serif;
@@ -26,16 +25,14 @@ main {
 .overlap-contact-section {
   position: absolute;
   top: 23%;
-  left: 26%;
-  width: 300px;
+  left: 35%;
+  width: 30%;
   display: inline;
   border: black 2px solid;
   border-radius: 10px;
   background-color: #fb804d;
   box-shadow: 0 0 3px 3px black;
 }
-
-
 
 .contact-form {
   padding: 35px 35px;
@@ -48,6 +45,7 @@ main {
 
 .container h2 {
   font-size: 30px;
+  text-align: center;
 }
 
 .form-group {
@@ -101,12 +99,12 @@ input[type="submit"]:hover {
 
 @media screen and (max-height: 1000px) {
   .contact-us-section {
-    height: 100vh;
+    height: 70vh;
   }
 
   .overlap-contact-section {
-    width: 50%;
-    left: 14%;
+    width: 30%;
+    left: 35%;
   }
 }
 
@@ -129,12 +127,18 @@ input[type="submit"]:hover {
 
 @media screen and (max-width: 1500px) {
   .overlap-contact-section {
-    width: 75%;
-    left: 14%;
+    left: 35%;
+    width: 30%;
   }
 }
 
 @media screen and (max-width: 1100px) {
+
+    .overlap-contact-section {
+        left: 26%;
+        width: 50%;
+      }
+
   .contact-us-section {
     height: 100vh;
   }
