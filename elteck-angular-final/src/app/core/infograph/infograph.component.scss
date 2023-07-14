@@ -1,0 +1,130 @@
+.floating-info {
+  width: 100%;
+  height: 30px;
+  background-color: #fb804d;
+  align-items: center;
+}
+
+.email,
+.phone {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.email i,
+.phone i {
+  margin-right: 10px;
+}
+
+.contact-info {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1100px) {
+  .nav__links {
+    font-size: 15px;
+  }
+
+  .nav__links li {
+    padding: 5px 15px;
+    text-align: center;
+  }
+
+  .cta {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .logo {
+    margin-top: 5px;
+    margin-left: -20px;
+  }
+
+  .logo img {
+    width: 80%;
+  }
+
+  .contact-info {
+    width: 75%;
+  }
+
+  footer {
+    height: 100%;
+  }
+
+  .footer-info-holder {
+    width: 80%;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+
+  .footer-info-holder img {
+    flex-basis: 40%;
+  }
+
+  .footer-info-holder ul {
+    flex-basis: 40%;
+  }
+
+  .footer-info-holder > iframe {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+
+  .menu {
+    display: initial;
+  }
+
+  .logo {
+    margin-top: 5px;
+    margin-left: -20px;
+  }
+
+  .logo img {
+    width: 70%;
+  }
+
+  .floating-info {
+    height: 40px;
+  }
+
+  .contact-info {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .contact-info .email,
+  .phone {
+    font-size: 10px;
+    margin: 7px 0px;
+  }
+
+  .footer__links {
+    display: initial;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
