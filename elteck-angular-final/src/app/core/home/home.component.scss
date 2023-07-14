@@ -1,0 +1,572 @@
+body {
+  position: relative;
+}
+
+/* Main Sections */
+
+main {
+  min-height: 100%;
+  width: 100%;
+}
+
+/* Quote Section */
+.quote-container {
+  font-family: "Montserrat", sans-serif;
+  height: 70vh;
+  width: 100%;
+  position: relative;
+  background-color: #a7afba;
+}
+
+.quote-image {
+  position: absolute;
+  top: -6%;
+  right: 25%;
+}
+
+.quote-image img {
+  width: 130%;
+  height: 110%;
+}
+
+.free-quote {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  padding: 50px 50px;
+  text-align: center;
+  width: 35%;
+}
+
+.free-quote h1 {
+  margin-bottom: 60px;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.free-quote h2 {
+  margin-bottom: 30px;
+}
+
+.span-one {
+  color: #fb804d;
+}
+
+.teck {
+  color: #ff4949;
+}
+
+.cta {
+  padding: 9px 25px;
+  background-color: #fb804d;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.cta {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 1px black;
+}
+
+.cta:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* About Section */
+
+.about-us {
+  position: relative;
+  background-color: #fb804d;
+  height: 70vh;
+  align-items: center;
+}
+
+.business-info {
+  width: 70%;
+  height: 60%;
+  margin: 0 auto;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+}
+
+.owner-photo img {
+  width: 100%;
+}
+
+.business-desc {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.business-desc h1 {
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.business-desc p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.business-stats {
+  display: flex;
+  width: 65%;
+  justify-content: space-between;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex-basis: 42%;
+  margin: 20px 20px;
+  background-color: white;
+  padding: 10px 10px;
+  border:
+          /* #A7AFBA */ black 5px solid;
+}
+
+.stat-card p {
+  margin: 5px 5px;
+}
+
+/* Services Section */
+
+.services {
+  position: relative;
+  background-color: #a7afba;
+  min-height: 100%;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.what-we-do {
+  font-family: "Montserrat", sans-serif;
+  font-size: 70px;
+  font-weight: 900;
+  padding: 0px 50px;
+  padding-top: 100px;
+  padding-bottom: 25px;
+}
+
+.services-box {
+  width: 70%;
+  height: 75vh;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  width: 30%;
+  height: 43%;
+  background-color: white;
+  flex-basis: 30%;
+  margin: 17px 17px;
+  border: black 5px solid;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  background-color: #fb804d;
+}
+
+.service-card:hover {
+  background-color: #a7afba;
+  transition: 0.5s;
+}
+
+.what-we-do-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 550;
+  padding: 0px 50px;
+  padding-bottom: 15px;
+}
+
+.icon {
+  font-size: 60px;
+  padding: 25px 25px;
+}
+
+.service-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 550;
+  padding: 0px 10px;
+  padding-bottom: 15px;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 1px;
+}
+
+.service-desc i {
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+.custom-shape-divider-top-1687284359 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1687284359 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-top-1687284359 .shape-fill {
+  fill: #a7afba;
+}
+
+.custom-shape-divider-top-1688247776 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1688247776 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+}
+
+.custom-shape-divider-top-1688247776 .shape-fill {
+  fill: #fb804d;
+}
+
+.custom-shape-divider-bottom-1688329329 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1688329329 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 75px;
+}
+
+.custom-shape-divider-bottom-1688329329 .shape-fill {
+  fill: #000000;
+}
+
+@media only screen and (max-width: 1700px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .free-quote {
+    left: 15%;
+  }
+
+  .free-quote h1,
+  h2 {
+    font-size: 30px;
+  }
+
+  .quote-image {
+    right: 20%;
+  }
+
+  .about-us {
+    height: 75vh;
+  }
+
+  .business-info {
+    width: 85%;
+    position: relative;
+    margin-left: -100px;
+  }
+
+  .business-stats {
+    width: 80%;
+  }
+
+  .stat-card {
+    flex-basis: 40%;
+  }
+
+  .stat-card h2 {
+    font-size: 20px;
+  }
+
+  .stat-card p {
+    font-size: 15px;
+  }
+
+  .owner-photo img {
+    width: 120%;
+  }
+
+  .services-box {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .quote-container {
+    height: 70vh;
+  }
+
+  .free-quote {
+    width: 45%;
+    margin-left: -100px;
+  }
+
+  .quote-image {
+    right: 15%;
+    top: 0%;
+  }
+
+  .about-us {
+    height: 75vh;
+  }
+
+  .owner-photo img {
+    width: 150%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .quote-container {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .free-quote {
+    position: relative;
+    width: 70%;
+    height: 100%;
+  }
+
+  .free-quote h1,
+  h2 {
+    font-size: 20px;
+  }
+
+  .book-now {
+    display: initial;
+    font-size: 20px;
+  }
+
+  .quote-image {
+    opacity: 0.5;
+    right: 0%;
+    overflow: hidden;
+  }
+
+  .owner-photo {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.5;
+    left: -25%;
+  }
+
+  .business-desc {
+    width: 90%;
+    z-index: 0;
+    margin-left: 125px;
+  }
+
+  .services {
+    display: block;
+    height: 150vh;
+  }
+
+  .service-card {
+    flex-basis: 45%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    width: 100%;
+  }
+
+  .quote-container {
+    height: 43vh;
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .free-quote {
+    width: 90%;
+    padding: 30px 0px;
+    margin: 0 auto;
+    position: absolute;
+    left: 5%;
+  }
+
+  .book-now {
+    font-size: 15px;
+  }
+
+  .quote-image {
+    opacity: 0.5;
+    top: 0%;
+    right: -10%;
+    overflow: hidden;
+  }
+
+  .about-us {
+    overflow: hidden;
+  }
+
+  .business-info {
+    width: 115%;
+    height: 65%;
+    position: absolute;
+    top: 20%;
+    left: -3%;
+  }
+
+  .what-we-do {
+    font-size: 40px;
+  }
+
+  .what-we-do-desc {
+    font-size: 30px;
+  }
+
+  .services {
+    display: block;
+    height: 250vh;
+  }
+
+  .service-card {
+    flex-basis: 100%;
+  }
+
+  .service-desc {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about-us {
+    height: 75vh;
+    width: 100%;
+  }
+
+  .business-desc {
+    width: 100%;
+    margin-left: 150px;
+  }
+
+  .business-stats {
+    width: 105%;
+  }
+
+  .stat-card {
+    flex-basis: 30%;
+    margin: 10px 10px;
+  }
+
+  .stat-card h2 {
+    font-size: 15px;
+  }
+
+  .stat-card p {
+    font-size: 10px;
+  }
+
+  .services {
+    display: block;
+    height: 260vh;
+  }
+
+  .service-desc {
+    font-size: 15px;
+  }
+
+  .service-card i {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 345px) {
+  .quote-container {
+    height: 50vh;
+  }
+
+  .about-us {
+    height: 90vh;
+  }
+
+  .services {
+    height: 280vh;
+  }
+
+  .business-stats {
+    width: 130%;
+    margin-left: -25px;
+  }
+
+  .stat-card {
+    flex-basis: 20%;
+    margin: 10px 10px;
+  }
+
+  .service-card i {
+    font-size: 35px;
+  }
+
+  .service-desc {
+    font-size: 15px;
+  }
+
+  .contact-info .email,
+  .phone {
+    font-size: 7px;
+    margin: 7px 0px;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .quote-container {
+    height: 50vh;
+  }
+
+  .about-us {
+    height: 90vh;
+  }
+  .services {
+    height: 280vh;
+  }
+}
