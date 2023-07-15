@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 import { AuthModule } from './auth/auth.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './shared/services/auth.service';
+import { ElteckModule } from './elteck/elteck.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AuthService } from './shared/services/auth.service';
     AppRoutingModule,
     CoreModule,
     AuthModule,
+    ElteckModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
