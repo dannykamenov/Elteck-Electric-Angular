@@ -3,8 +3,15 @@
       <img src="/assets/logos/White on Black (1).png" alt="" />
       <ul class="nav__links footer__links">
         <li><a routerLink="/about">About Us</a></li>
-        <li><a href="gallery1.html">Gallery</a></li>
+        <ng-container *ngIf="isLoggedIn">
+        <li><a href="/gallery">Gallery</a></li>
         <li><a routerLink="/contact">Contact Us</a></li>
+        <li><a routerLink="/reviews">Reviews</a></li>
+        <li><a routerLink="/my-profile">My Profile</a></li>
+        <li><a (click)="authService.SignOut()">Logout</a></li>
+      </ng-container>
+      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/register">Register</a></li>
       </ul>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.267711636048!2d-79.5588246!3d43.6425982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b378993bb2311%3A0x83965ee91ed006fc!2s362%20The%20East%20Mall%20%231405%2C%20Etobicoke%2C%20ON%20M9B%206C4%2C%20Canada!5e0!3m2!1sen!2sbg!4v1688367027834!5m2!1sen!2sbg"

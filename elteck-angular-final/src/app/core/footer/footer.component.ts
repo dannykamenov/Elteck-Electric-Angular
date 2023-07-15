@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  get isLoggedIn() {
+    return this.authService.isLoggedIn;
+  }
 
+    constructor(public authService: AuthService) { 
+    }
 }
