@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,34 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  loginForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private auth: Auth, private router: Router) {
-    this.loginForm = this.formBuilder.group({
-      email: formBuilder.control('', [
-        Validators.required,
-        Validators.email,
-        Validators.minLength(6),
-      ]),
-      pass: formBuilder.control('', [
-        Validators.required,
-        Validators.minLength(6),
-      ]),
-    });
-  }
+  constructor(public authService: AuthService) {}
 
-  public onSubmit() {
-    signInWithEmailAndPassword(
-      this.auth,
-      this.loginForm.value.email,
-      this.loginForm.value.pass
-    )
-      .then((res: any) => {
-        console.log(res);
-        this.router.navigate(['/']);
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
-  }
 }
