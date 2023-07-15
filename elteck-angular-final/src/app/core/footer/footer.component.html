@@ -8,7 +8,7 @@
         <li><a routerLink="/contact">Contact Us</a></li>
         <li><a routerLink="/reviews">Reviews</a></li>
         <li><a routerLink="/my-profile">My Profile</a></li>
-        <li><a (click)="authService.SignOut()">Logout</a></li>
+        <li><a href="" (click)="authService.SignOut()">Logout</a></li>
       </ng-container>
       <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
       <li *ngIf="!isLoggedIn"><a routerLink="/register">Register</a></li>
