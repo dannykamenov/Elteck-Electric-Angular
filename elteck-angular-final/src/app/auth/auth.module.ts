@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 
 
@@ -13,7 +14,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    MyProfileComponent
   ],
   imports: [
     ReactiveFormsModule,

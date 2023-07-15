@@ -7,11 +7,14 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
+import { AuthGuard } from './shared/guard/auth.guard';
+import { MyProfileComponent } from './auth/my-profile/my-profile.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: HomeComponent, data: {title: 'Home'}},
   {path: 'about', component: AboutComponent, data: {title: 'About'}},
-  {path: 'contact', component: ContactComponent, data: {title: 'Contact Us'}},
+  {path: 'my-profile', component: MyProfileComponent, data: {title: 'My Profile'}, canActivate: [AuthGuard]},
+  {path: 'contact', component: ContactComponent, data: {title: 'Contact Us'}, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent, data: {title: 'Login'}},
   {path: 'register', component: RegisterComponent, data: {title: 'Register'}},
   {path: 'forgot-password', component: ForgotPasswordComponent, data: {title: 'Forgot Password'}},
