@@ -32,7 +32,6 @@ export class RegisterComponent {
     }
     createUserWithEmailAndPassword(this.auth, this.registerForm.value.email, this.registerForm.value.pass.password)
       .then((res:any) => {
-        console.log(res)
       }).catch((err) => {
         alert(err.message)
       })
