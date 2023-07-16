@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,8 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
   ],
   imports: [
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     LoginComponent,
