@@ -36,11 +36,13 @@ main {
 
 .contact-form {
   padding: 35px 35px;
+  text-align: center;
   /*     background-color: #FB804D; */
 }
 
 .container {
   width: 100%;
+  text-align: center;
 }
 
 .container h2 {
@@ -131,6 +133,48 @@ textarea {
 
 .container-head {
     margin-bottom: 20px;
+}
+
+.rounded-circle {
+    margin-bottom: 10px;
+}
+
+.update-profile {
+    display: inline-block;
+    width: 60%;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.update-profile:hover {
+    background-color: black;
+    color: white;
+  }
+
+.save-profile {
+    display: inline-block;
+    width: 60%;
+    padding: 10px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.save-profile:hover {
+    background-color: white;
+    color: #4285f4;
 }
 
 @media screen and (max-height: 1000px) {

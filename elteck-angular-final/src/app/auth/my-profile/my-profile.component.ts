@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { getAuth, updateProfile } from "firebase/auth";
 
 @Component({
   selector: 'app-my-profile',
@@ -7,5 +8,13 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./my-profile.component.scss']
 })
 export class MyProfileComponent {
+  isUpdating: boolean = false;
   constructor(public authService: AuthService) {}
+
+  changeDisplay() {
+    this.isUpdating = true;
+  }
+
+  updateProfile() {
+  }
 }
