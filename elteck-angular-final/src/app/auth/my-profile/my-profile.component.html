@@ -127,8 +127,8 @@
                     />
                   </div>
             </div>
-            <a class="save-profile" href="#" onclick="return false" (click)="changeDisplay()">
-              Update Profile
+            <a class="save-profile" href="#" onclick="return false" (click)="updateProfile(userDisplayName.value, userPhotoUrl.value)">
+              Save Profile
             </a>
             <a class="button" href="" (click)="authService.SignOut()">
               <i class="fas fa-sign-out-alt"></i>Log out

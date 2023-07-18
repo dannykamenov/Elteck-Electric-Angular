@@ -15,6 +15,7 @@ export class MyProfileComponent {
     this.isUpdating = true;
   }
 
-  updateProfile() {
+  updateProfile(name:any, photoUrl:any) {
+    console.log(name, photoUrl);
   }
 }
