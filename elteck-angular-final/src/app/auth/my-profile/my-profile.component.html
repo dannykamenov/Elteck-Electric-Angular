@@ -119,12 +119,7 @@
                     />
                   </div>
                   <div class="formGroup">
-                    <input
-                      type="text"
-                      class="formControl"
-                      placeholder="Paste your profile photo url here"
-                      #userPhotoUrl
-                    />
+                    <input type="file" id="myFile" name="filename" #userPhotoUrl>
                   </div>
             </div>
             <a class="save-profile" href="#" onclick="return false" (click)="updateProfile(userDisplayName.value, userPhotoUrl.value)">

@@ -179,6 +179,13 @@ textarea {
     color: #4285f4;
 }
 
+input[type="file"] {
+  width: 61%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 @media screen and (max-height: 1000px) {
   .contact-us-section {
     height: 70vh;

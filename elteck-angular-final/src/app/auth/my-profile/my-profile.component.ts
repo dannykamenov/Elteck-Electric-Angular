@@ -19,10 +19,11 @@ export class MyProfileComponent {
 
   updateProfile(name: any, photoUrl: any) {
     const auth = getAuth();
-    updateProfile(auth.currentUser!, {
+    console.log(photoUrl)
+/*     updateProfile(auth.currentUser!, {
       displayName: name? name : auth.currentUser?.displayName,
       photoURL: photoUrl? photoUrl : auth.currentUser?.photoURL,
-    });
+    }); */
     this.isUpdating = false;
 
   }
