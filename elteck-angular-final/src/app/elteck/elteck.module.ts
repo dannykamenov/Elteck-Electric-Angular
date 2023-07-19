@@ -10,6 +10,9 @@ import { GalleryComponent } from './gallery/gallery.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    GalleryComponent
   ]
 })
 export class ElteckModule { }
