@@ -94,12 +94,15 @@
                 <strong>Verified: </strong> <u>{{ user.emailVerified }}</u>
               </p>
             </div>
-            <a class="update-profile" href="#" onclick="return false" (click)="changeDisplay()">
-              Update Profile
-            </a>
-            <a class="button" href="" (click)="authService.SignOut()">
-              <i class="fas fa-sign-out-alt"></i>Log out
-            </a>
+            <div class="button-container" >
+                <a class="update-profile" href="#" onclick="return false" (click)="changeDisplay()">
+                    Update Profile
+                  </a>
+                  <a class="button" href="" (click)="authService.SignOut()">
+                    <i class="fas fa-sign-out-alt"></i>Log out
+                  </a>
+            </div>
+            
           </ng-container>
           <ng-container *ngIf="isUpdating">
             <img
