@@ -79,19 +79,19 @@
             />
             <div class="media-body">
               <h2>
-                Hello:
-                <strong>{{
+                Hello, 
+                 {{
                   user.displayName ? user.displayName : "User"
-                }}</strong>
+                }}
               </h2>
               <p>
-                User ID: <strong>{{ user.uid }}</strong>
+                <strong>User ID: </strong>{{ user.uid }}
               </p>
               <p>
-                Email: <strong>{{ user.email }}</strong>
+                <strong>Email: </strong>{{ user.email }}
               </p>
               <p>
-                Email Verified: <strong>{{ user.emailVerified }}</strong>
+                <strong>Verified: </strong> <u>{{ user.emailVerified }}</u>
               </p>
             </div>
             <a class="update-profile" href="#" onclick="return false" (click)="changeDisplay()">
