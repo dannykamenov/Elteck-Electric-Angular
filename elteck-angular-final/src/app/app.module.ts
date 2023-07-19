@@ -4,7 +4,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import {provideStorage, getStorage } from '@angular/fire/storage'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,7 @@ import { ElteckModule } from './elteck/elteck.module';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
+    AngularFireStorageModule,
     ReactiveFormsModule,
     AppRoutingModule,
     CoreModule,
