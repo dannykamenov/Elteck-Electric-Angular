@@ -120,17 +120,19 @@
                       placeholder="{{ user.displayName ? user.displayName : 'Set Username' }}"
                       #userDisplayName
                     />
-                  </div>
-                  <div class="formGroup">
+                </div>
+                <div class="formGroup">
                     <input type="file" id="myFile" name="filename" (change)="detectFiles($event)" >
-                  </div>
+                </div>
             </div>
+            <div class="button-container" >
             <a class="save-profile" href="#" onclick="return false" (click)="updateProfile(userDisplayName.value)">
               Save Profile
             </a>
             <a class="button" href="" (click)="authService.SignOut()">
               <i class="fas fa-sign-out-alt"></i>Log out
             </a>
+            </div>
           </ng-container>
         </div>
       </div>
