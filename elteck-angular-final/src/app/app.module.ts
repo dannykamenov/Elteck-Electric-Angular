@@ -22,7 +22,7 @@ import { ElteckModule } from './elteck/elteck.module';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    provideStorage(() => getStorage()),
+    /* provideStorage(() => getStorage()), */
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
