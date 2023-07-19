@@ -10,6 +10,7 @@ import { getAuth, updateProfile } from 'firebase/auth';
 export class MyProfileComponent {
   isUpdating: boolean = false;
   constructor(public authService: AuthService) {}
+  public file: any
 
   changeDisplay() {
     this.isUpdating = true;
@@ -17,9 +18,12 @@ export class MyProfileComponent {
     console.log(auth.currentUser)
   }
 
-  updateProfile(name: any, photoUrl: any) {
+  detectFiles(event: any) {
+    this.file = event.target.files[0];
+  }
+
+  updateProfile(name: any) {
     const auth = getAuth();
-    console.log(photoUrl)
 /*     updateProfile(auth.currentUser!, {
       displayName: name? name : auth.currentUser?.displayName,
       photoURL: photoUrl? photoUrl : auth.currentUser?.photoURL,

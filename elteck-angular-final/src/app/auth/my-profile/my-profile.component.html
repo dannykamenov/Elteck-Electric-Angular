@@ -119,10 +119,10 @@
                     />
                   </div>
                   <div class="formGroup">
-                    <input type="file" id="myFile" name="filename" #userPhotoUrl>
+                    <input type="file" id="myFile" name="filename" (change)="detectFiles($event)" >
                   </div>
             </div>
-            <a class="save-profile" href="#" onclick="return false" (click)="updateProfile(userDisplayName.value, userPhotoUrl.value)">
+            <a class="save-profile" href="#" onclick="return false" (click)="updateProfile(userDisplayName.value)">
               Save Profile
             </a>
             <a class="button" href="" (click)="authService.SignOut()">
