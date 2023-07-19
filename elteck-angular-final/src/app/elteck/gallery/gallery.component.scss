@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Space+Mono&display=swap');
+
+
+.gallery-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 90px;
+    color: #24252a;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 30px;
+    background-color: #A7AFBA;
+}
+
+.gallery-section {
+    position: relative;
+    background-color: #A7AFBA;
+    height: 100%;
+    display: flex;
+    width: 100%;
+}
+
+.gallery-container {
+    width: 100%;
+    margin: 0 auto;
+    margin: 20px 20px;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-container img {
+    flex-basis: 30%;
+    height: 360px;
+    width: 270px;
+    margin: 15px 15px;
+    object-fit: cover;
+    border: black 5px solid;
+
+}
+
+.gallery-container > .last-image {
+    margin-bottom: 100px;
+}
+
+
+    
+@media screen and (max-width: 1200px) {
+
+    .gallery-title {
+        font-size: 70px;
+    }
+
+
+    .gallery-container img {
+        flex-basis: 43%;
+        margin: 15px 5px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .gallery-title {
+        font-size: 50px;
+    }
+
+    .gallery-container {
+        margin: 0 auto;
+    }
+
+    .gallery-container img {
+        flex-basis: 100%;
+        margin: 15px 15px;
+    }
+}
