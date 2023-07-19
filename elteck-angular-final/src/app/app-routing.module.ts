@@ -9,6 +9,7 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { MyProfileComponent } from './auth/my-profile/my-profile.component';
+import { GalleryComponent } from './elteck/gallery/gallery.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: HomeComponent, data: {title: 'Home'}},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent, data: {title: 'Register'}},
   {path: 'forgot-password', component: ForgotPasswordComponent, data: {title: 'Forgot Password'}},
   {path: 'verify-email', component: VerifyEmailComponent, data: {title: 'Verify Email'}},
+  {path: 'gallery', component: GalleryComponent, data: {title: 'Gallery'}},
 ];
 
 @NgModule({
