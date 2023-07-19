@@ -6,7 +6,6 @@ import {
   AngularFirestore,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
@@ -18,7 +17,6 @@ export class AuthService {
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
     public ngZone: NgZone, // NgZone service to remove outside scope warning
-    private db: AngularFireDatabase
   ) {
     this.afAuth.authState.subscribe((user) => {
       if (user) {
