@@ -2,16 +2,9 @@
     <h1 class="gallery-title">PHOTO GALLERY</h1>
     <section class="gallery-section">
         <div class="gallery-container">
-            <img src="resources/GALLERY/Image1.jpg" alt="">
-            <img src="resources/GALLERY/Image2.jpg" alt="">
-            <img src="resources/GALLERY/Image3.jpg" alt="">
-            <img src="resources/GALLERY/Image4.jpg" alt="">
-            <img src="resources/GALLERY/Image5.jpg" alt="">
-            <img src="resources/GALLERY/Image6.jpg" alt="">
-            <img src="resources/GALLERY/Image7.jpg" alt="">
-            <img src="resources/GALLERY/Image8.jpg" alt="">
-            <img src="resources/GALLERY/Image9.jpg" alt="">
-            <img src="resources/GALLERY/Image10.jpg" alt="" class="last-image">
+            <ng-container *ngFor="let imageUrl of imageUrls$ | async">
+                <img [src]="imageUrl" alt="Image">
+            </ng-container>
         </div>
         <div class="whitespace"></div>
         <div class="custom-shape-divider-bottom-1688329329">

@@ -14,6 +14,7 @@ import { AuthModule } from './auth/auth.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './shared/services/auth.service';
 import { ElteckModule } from './elteck/elteck.module';
+import { FirebaseStorageService } from './shared/services/firebase-storage.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,6 @@ import { ElteckModule } from './elteck/elteck.module';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    /* provideStorage(() => getStorage()), */
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
@@ -33,7 +33,7 @@ import { ElteckModule } from './elteck/elteck.module';
     AuthModule,
     ElteckModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, FirebaseStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
