@@ -20,8 +20,6 @@ export class AuthService {
     public ngZone: NgZone, // NgZone service to remove outside scope warning
     private db: AngularFireDatabase
   ) {
-    /* Saving user data in localstorage when 
-    logged in and setting up null when logged out */
     this.afAuth.authState.subscribe((user) => {
       if (user) {
         this.userData = user;
@@ -54,8 +52,6 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
-        up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
       })
@@ -106,7 +102,7 @@ export class AuthService {
       });
   }
 
-  
+
   SetUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
