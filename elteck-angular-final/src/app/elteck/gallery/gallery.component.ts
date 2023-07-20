@@ -8,9 +8,11 @@ import { FirebaseStorageService } from 'src/app/shared/services/firebase-storage
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent {
+  isLoading = false;
   imageUrls$: Observable<string[]>;
 
   constructor(private storageService: FirebaseStorageService) {
     this.imageUrls$ = this.storageService.getImageUrls();
+    this.isLoading = true;
   }
 }
