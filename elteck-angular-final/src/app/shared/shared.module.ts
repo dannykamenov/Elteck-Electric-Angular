@@ -9,7 +9,7 @@ import { LoaderComponent } from './loader/loader.component';
     LoaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     LoaderComponent

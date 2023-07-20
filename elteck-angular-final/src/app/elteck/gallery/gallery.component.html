@@ -2,16 +2,16 @@
     <h1 class="gallery-title">PHOTO GALLERY</h1>
     <section class="gallery-section">
         <div class="gallery-container">
-            <ng-container *ngIf="isLoading; else imageSection">
+            <ng-container *ngIf="isLoading">
                 <div class="app-loader">
                     <app-loader></app-loader>
                 </div>
             </ng-container>
-            <ng-template #imageSection>
+            <ng-container *ngIf="isNotLoading">
                 <ng-container *ngFor="let imageUrl of imageUrls$ | async">
                     <img [src]="imageUrl" alt="Image">
                 </ng-container>
-            </ng-template>
+            </ng-container>
         </div>
         <div class="whitespace"></div>
         <div class="custom-shape-divider-bottom-1688329329">
