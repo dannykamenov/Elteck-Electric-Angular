@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent, data: {title: 'Register'}},
   {path: 'forgot-password', component: ForgotPasswordComponent, data: {title: 'Forgot Password'}},
   {path: 'verify-email', component: VerifyEmailComponent, data: {title: 'Verify Email'}},
-  {path: 'gallery', component: GalleryComponent, data: {title: 'Gallery'}},
+  {path: 'gallery', component: GalleryComponent, data: {title: 'Gallery'}, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
