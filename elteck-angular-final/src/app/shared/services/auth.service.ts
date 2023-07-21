@@ -83,21 +83,57 @@ export class AuthService {
   }
   // Sign in with Google
   GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['/']);
+    this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
     });
+
+    this.router.navigate(['/']);
   }
   // Auth logic to run auth providers
-  AuthLogin(provider: any) {
-    return this.afAuth
-      .signInWithPopup(provider)
+//  AuthLogin(provider: any) {
+/*     return this.afAuth
+      //.signInWithPopup(provider)
+      .signInWithRedirect(provider)
       .then((result) => {
         this.router.navigate(['/']);
         this.SetUserData(result.user);
       })
       .catch((error) => {
         window.alert(error);
-      });
+      }); */
+
+/*      return this.afAuth.signInWithRedirect(provider)
+      .then((result) => {
+        this.router.navigate(['/']);
+        this.afAuth.getRedirectResult()
+        .then((result) => {
+          if (result.user) {
+            // The user is signed in, and you can access the user object here
+            const user = result.user;
+            console.log('Redirect-based sign-in successful!', user);
+            this.router.navigate(['/']); 
+            this.SetUserData(user); 
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      })
+  }*/
+
+  async AuthLogin(provider: any) {
+    try {
+      await this.afAuth.signInWithRedirect(provider);
+      const result = await this.afAuth.getRedirectResult();
+      if (result.user) {
+        const user = result.user;
+        this.SetUserData(user); 
+        this.router.navigate(['/']); 
+      } else {
+        this.router.navigate(['/']); 
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
 
