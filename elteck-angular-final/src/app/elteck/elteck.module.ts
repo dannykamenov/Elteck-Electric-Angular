@@ -2,19 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GalleryComponent } from './gallery/gallery.component';
 import { SharedModule } from '../shared/shared.module';
+import { ReviewPageComponent } from './review-page/review-page.component';
+import { PostReviewComponent } from './post-review/post-review.component';
 
 
 
 @NgModule({
   declarations: [
-    GalleryComponent
+    GalleryComponent,
+    ReviewPageComponent,
+    PostReviewComponent
   ],
   imports: [
     CommonModule,
     SharedModule
   ],
   exports: [
-    GalleryComponent
+    GalleryComponent,
+    ReviewPageComponent,
+    PostReviewComponent
   ]
 })
 export class ElteckModule { }

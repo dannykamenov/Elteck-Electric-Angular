@@ -11,6 +11,7 @@ import { AuthGuard } from './shared/guard/auth.guard';
 import { MyProfileComponent } from './auth/my-profile/my-profile.component';
 import { GalleryComponent } from './elteck/gallery/gallery.component';
 import { AuthGuard2 } from './shared/guard/verified.guard'
+import { ReviewPageComponent } from './elteck/review-page/review-page.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: HomeComponent, data: {title: 'Home'}},
@@ -22,6 +23,8 @@ const routes: Routes = [
   {path: 'forgot-password', component: ForgotPasswordComponent, data: {title: 'Forgot Password'}, canActivate: [AuthGuard2]},
   {path: 'verify-email', component: VerifyEmailComponent, data: {title: 'Verify Email'}, canActivate: [AuthGuard2]},
   {path: 'gallery', component: GalleryComponent, data: {title: 'Gallery'}, canActivate: [AuthGuard]},
+  {path: 'reviews', component: ReviewPageComponent, data: {title: 'Reviews'}, canActivate: [AuthGuard]},
+  
 ];
 
 @NgModule({
