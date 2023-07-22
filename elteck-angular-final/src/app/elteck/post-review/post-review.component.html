@@ -28,16 +28,22 @@
     <section class="overlap-contact-section">
       <div class="contact-form">
         <div class="container">
-          <h2>Register</h2>
+          <h2>Leave a Review!</h2>
           <div class="displayTable">
               <div class="displayTableCell">
                 <div class="authBlock">
                   <div class="formGroup">
+                    <ng-container *ngFor="let i of stars">
+                        <i class="fa-solid fa-star" [ngClass]="{'active': i<=rating }" (mouseenter)="mouseEnterHandler(i)" (mouseleave)="mouseLeaveHandler()"></i>
+                    </ng-container>
+                    
+                  </div>
+                  <div class="formGroup">
                     <input
-                      type="email"
+                      type="password"
                       class="formControl"
-                      placeholder="Email Address"
-                      #userEmail
+                      placeholder="Password"
+                      #userPwd
                       required
                     />
                   </div>
@@ -58,26 +64,6 @@
                       
                     />
                   </div>
-                  <div class="formGroup">
-                    <span class="or"><span class="orInner">Or</span></span>
-                  </div>
-                  <!-- Continue with Google -->
-                  <div class="formGroup">
-                    <button
-                      type="button"
-                      class="btn googleBtn"
-                      
-                    >
-                      <i class="fab fa-google-plus-g"></i>
-                      Continue with Google
-                    </button>
-                  </div>
-                </div>
-                <div class="redirectToLogin">
-                  <span
-                    >Already have an account?
-                    <a class="redirect" routerLink="/login">Log In</a></span
-                  >
                 </div>
               </div>
             </div>

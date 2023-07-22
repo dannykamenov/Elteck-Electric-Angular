@@ -167,6 +167,17 @@ input[type="button"]:hover {
   }
 }
 
+.fa-star {
+    color: lightgray;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.active {
+    color: gold;
+}
+
 @media screen and (max-width: 800px) {
   .contact-us-section {
     height: 175vh;
