@@ -76,7 +76,7 @@ textarea {
   resize: none;
 }
 
-input[type="submit"] {
+.btnPrimary {
   display: block;
   width: 100%;
   padding: 10px;
@@ -97,6 +97,10 @@ input[type="submit"]:hover {
   flex-basis: 49%;
 }
 
+.redirectToLogin {
+  text-align: center;
+  margin-top: 20px;
+}
 @media screen and (max-height: 1000px) {
   .contact-us-section {
     height: 70vh;
