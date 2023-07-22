@@ -32,7 +32,6 @@ async function postReview(req, res) {
                 title,
                 content,
                 rating,
-                date,
                 username,
                 useremail,
                 userimage,
