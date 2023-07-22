@@ -24,19 +24,23 @@ function getLatestReviews(req, res) {
 }
 
 async function postReview(req, res) {
-    const { uid, title, content, rating, date, username, useremail, userimage } = req.body;
+    const { uid, title, content, rating, date, username, useremail, userimage, isAuth } = req.body;
     try {
-        const review = await Review.create({
-            uid,
-            title,
-            content,
-            rating,
-            date,
-            username,
-            useremail,
-            userimage,
-        });
-        res.status(201).json(review);
+        if(isAuth){
+            const review = await Review.create({
+                uid,
+                title,
+                content,
+                rating,
+                date,
+                username,
+                useremail,
+                userimage,
+            });
+            res.status(201).json(review);
+        } else {
+            res.status(401).json({ error: 'Not authorized' });
+        }
     } catch (err) {
         res.status(500).json({ error: err });
     }
