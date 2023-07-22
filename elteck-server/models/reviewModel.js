@@ -9,7 +9,7 @@ const reviewSchema = new mongoose.Schema({
     username: String,
     useremail: String,
     userimage: String,
-});
+}, { timestamps: { createdAt: 'created_at' } });
 
 const Review = mongoose.model('Review', reviewSchema);
 
