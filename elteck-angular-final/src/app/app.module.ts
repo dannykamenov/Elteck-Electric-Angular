@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './shared/services/auth.service';
 import { ElteckModule } from './elteck/elteck.module';
 import { FirebaseStorageService } from './shared/services/firebase-storage.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FirebaseStorageService } from './shared/services/firebase-storage.servi
     AngularFireStorageModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
     CoreModule,
     AuthModule,
     ElteckModule
