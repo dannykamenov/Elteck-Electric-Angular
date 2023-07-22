@@ -8,13 +8,27 @@ import { Component } from '@angular/core';
 export class PostReviewComponent {
   stars = [1, 2, 3, 4, 5];
   rating = 0;
+  saveRating = 0;
 
   mouseEnterHandler(index: number) {
-    this.rating = index;
+    if (this.saveRating === 0) {
+      this.rating = index;
+    }
+    if(this.saveRating < index) {
+      this.rating = index;
+    }
   }
 
   mouseLeaveHandler() {
-    this.rating = 0;
+    if (this.saveRating === 0) {
+      this.rating = 0;
+    } else {
+      this.rating = this.saveRating;
+    }
+  }
+
+  clickHandler(index: number) {
+    this.saveRating = index;
   }
 
 }

@@ -34,7 +34,7 @@
                 <div class="authBlock">
                   <div class="formGroup">
                     <ng-container *ngFor="let i of stars">
-                        <i class="fa-solid fa-star" [ngClass]="{'active': i<=rating }" (mouseenter)="mouseEnterHandler(i)" (mouseleave)="mouseLeaveHandler()"></i>
+                        <i class="fa-solid fa-star" [ngClass]="{'active': i<=rating }" (mouseenter)="mouseEnterHandler(i)" (mouseleave)="mouseLeaveHandler()" (click)="clickHandler(i)"></i>
                     </ng-container>
                     
                   </div>
