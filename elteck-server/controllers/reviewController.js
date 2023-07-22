@@ -9,3 +9,7 @@ function getReviews(req, res) {
         res.status(200).json(reviews);
     });
 }
+
+module.exports = {
+    getReviews,
+};
