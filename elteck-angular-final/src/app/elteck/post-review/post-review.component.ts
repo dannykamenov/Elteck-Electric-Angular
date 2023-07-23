@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { getAuth } from 'firebase/auth';
 import { Review } from 'src/app/shared/services/review';
+import {ApiService} from 'src/app/shared/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-review',
@@ -11,6 +13,8 @@ export class PostReviewComponent {
   stars = [1, 2, 3, 4, 5];
   rating = 0;
   saveRating = 0;
+
+  constructor(private api: ApiService, public router: Router) { }
 
   mouseEnterHandler(index: number) {
     if (this.saveRating === 0) {
@@ -46,7 +50,9 @@ export class PostReviewComponent {
         useremail: auth.currentUser?.email,
         userimage: auth.currentUser?.photoURL
       }
-      console.log(review);
+      this.api.addReview(review).subscribe((res) => {
+        this.router.navigate(['/reviews']);
+      });
     }
   }
 
