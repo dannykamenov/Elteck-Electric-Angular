@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { getAuth } from 'firebase/auth';
+import { Review } from 'src/app/shared/services/review';
 
 @Component({
   selector: 'app-post-review',
@@ -32,7 +34,11 @@ export class PostReviewComponent {
   }
 
   postReview(title: string, description: string) {
+    const auth = getAuth();
+    const isVerified = auth.currentUser?.emailVerified;
+    if(isVerified) {
 
+    }
   }
 
 }
