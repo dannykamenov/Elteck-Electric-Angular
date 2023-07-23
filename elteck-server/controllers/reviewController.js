@@ -24,7 +24,7 @@ function getLatestReviews(req, res) {
 }
 
 async function postReview(req, res) {
-    const { uid, title, content, rating, date, username, useremail, userimage, isAuth } = req.body;
+    const { uid, title, content, rating, username, useremail, userimage, isAuth } = req.body;
     try {
         if(isAuth){
             const review = await Review.create({

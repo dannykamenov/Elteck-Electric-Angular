@@ -3,8 +3,8 @@ export interface Review {
     title: string;
     content: string;
     rating: number;
-    username: string;
-    useremail: string;
-    userimage: string;
+    username: string | null;
+    useremail: string | null;
+    userimage: string | null;
 
 }

@@ -37,7 +37,16 @@ export class PostReviewComponent {
     const auth = getAuth();
     const isVerified = auth.currentUser?.emailVerified;
     if(isVerified) {
-
+      const review: Review = {
+        uid: auth.currentUser?.uid,
+        title: title,
+        content: description,
+        rating: this.saveRating,
+        username: auth.currentUser?.displayName,
+        useremail: auth.currentUser?.email,
+        userimage: auth.currentUser?.photoURL
+      }
+      console.log(review);
     }
   }
 
