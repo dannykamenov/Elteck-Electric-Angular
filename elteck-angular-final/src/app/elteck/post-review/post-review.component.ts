@@ -31,4 +31,8 @@ export class PostReviewComponent {
     this.saveRating = index;
   }
 
+  postReview(title: string, description: string) {
+
+  }
+
 }
