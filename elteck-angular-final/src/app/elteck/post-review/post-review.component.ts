@@ -48,9 +48,11 @@ export class PostReviewComponent {
         rating: this.saveRating,
         username: auth.currentUser?.displayName,
         useremail: auth.currentUser?.email,
-        userimage: auth.currentUser?.photoURL
+        userimage: auth.currentUser?.photoURL,
+        isAuth: isVerified,
       }
       this.api.addReview(review).subscribe((res) => {
+        console.log(res)
         this.router.navigate(['/reviews']);
       });
     }

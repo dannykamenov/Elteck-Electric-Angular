@@ -10,6 +10,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   addReview(review: Review) {
-    return this.http.post<Review>('http://localhost:3000/reviews', review);
+    return this.http.post<Review>('http://localhost:3000/api/reviews', review);
   }
 }

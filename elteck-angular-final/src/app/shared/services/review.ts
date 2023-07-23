@@ -6,5 +6,6 @@ export interface Review {
     username: string | null;
     useremail: string | null;
     userimage: string | null;
+    isAuth: boolean;
 
 }
