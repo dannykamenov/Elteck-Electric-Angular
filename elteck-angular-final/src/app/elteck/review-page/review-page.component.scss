@@ -75,7 +75,7 @@ p {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 
 .user-info img{
@@ -84,6 +84,14 @@ p {
     border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
+}
+
+.star-rating {
+    text-align: center;
+}
+
+.active {
+    color: #FFD700;
 }
     
 @media screen and (max-width: 1200px) {
@@ -112,5 +120,13 @@ p {
     .gallery-container .img {
         flex-basis: 100%;
         margin: 15px 15px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+
+    .gallery-container .img {
+        height: 500px;
     }
 }

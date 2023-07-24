@@ -11,18 +11,22 @@
         <ng-container *ngFor="let review of reviews">
           <div class="img">
             <i class="fa-solid fa-quote-left" style="color: #000000"></i>
+            <p class="star-rating">
+              <ng-container *ngFor="let i of stars">
+                <i
+                  class="fa-solid fa-star"
+                  [ngClass]="{ active: i <= review.rating }"
+                ></i>
+              </ng-container>
+            </p>
             <p>
-              This is the best business i have ever tried. Antoni was so great
-              and useful, he helped me a lot!This is the best business i have
-              ever tried. Antoni was so great and useful, he helped me a
-              lot!This is the best business i have ever tried. Antoni was so
-              great and useful.
+              {{ review.content }}
             </p>
             <div class="user-info">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/elteck-angular-softuni.appspot.com/o/users%2FxUezqWdOyLaytLHFoulknN95kYJ2%2Fprofile.jpg?alt=media&token=742216c9-5c4a-448c-86cc-230b6388213d" alt="" />
-                <div class="user-name">
-                    <h3>John Doe</h3>
-                </div>
+              <img [src]="review.userimage" alt="" />
+              <div class="user-name">
+                <h3>{{ review.username }}</h3>
+              </div>
             </div>
           </div>
         </ng-container>

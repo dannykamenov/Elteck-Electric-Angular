@@ -11,6 +11,7 @@ export class ReviewPageComponent {
   isLoading = true;
   isNotLoading = false;
   reviews: undefined | getReview[];
+  stars: undefined | number[] = [1, 2, 3, 4, 5];
 
     constructor(private api: ApiService) { 
       this.api.getReviews().subscribe((res) => {
@@ -18,5 +19,5 @@ export class ReviewPageComponent {
         this.isNotLoading = true;
         setTimeout(() => {this.isLoading = false}, 1000);
       });
-    }
+  }
 }
