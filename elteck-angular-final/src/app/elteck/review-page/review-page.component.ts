@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { getReview } from 'src/app/shared/services/getReview';
 
@@ -13,7 +14,7 @@ export class ReviewPageComponent {
   reviews: undefined | getReview[];
   stars: undefined | number[] = [1, 2, 3, 4, 5];
 
-    constructor(private api: ApiService) { 
+    constructor(private api: ApiService, private router: Router) { 
       this.api.getReviews().subscribe((res) => {
         this.reviews = res;
         this.isNotLoading = true;

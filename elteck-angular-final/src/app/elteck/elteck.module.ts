@@ -4,6 +4,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { SharedModule } from '../shared/shared.module';
 import { ReviewPageComponent } from './review-page/review-page.component';
 import { PostReviewComponent } from './post-review/post-review.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,7 +16,8 @@ import { PostReviewComponent } from './post-review/post-review.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports: [
     GalleryComponent,
