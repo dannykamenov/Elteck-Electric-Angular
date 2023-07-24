@@ -39,7 +39,9 @@
     margin: 15px 15px;
     object-fit: cover;
     border: black 5px solid;
-
+    background-color: #FB804D;
+    box-shadow: 0 0 3px 3px black;
+    border-radius: 3%;
 }
 
 .gallery-container > .last-image {
@@ -63,7 +65,7 @@ padding-top: 20px;
 padding-left: 20px;
 }
 
-p {
+.content {
     font-family: "Montserrat", sans-serif;
     padding: 10px 20px;
     font-size: 15px;
@@ -90,8 +92,17 @@ p {
     text-align: center;
 }
 
+.star-rating i {
+    font-size: 20px;
+    padding: 0px 5px;
+}
+
 .active {
     color: #FFD700;
+}
+
+.user-name {
+    font-family: "Montserrat", sans-serif;
 }
     
 @media screen and (max-width: 1200px) {
