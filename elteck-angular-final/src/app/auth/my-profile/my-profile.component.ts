@@ -55,7 +55,6 @@ export class MyProfileComponent {
       const storageRef = this.storage.ref(`users/${auth.currentUser?.uid}/profile.jpg`);
       const uploadTask = this.storage.upload(`users/${auth.currentUser?.uid}/profile.jpg`, this.file);
       uploadTask.percentageChanges().subscribe((percentage) => {
-        console.log(percentage);
       });
       uploadTask.then((uploadTaskSnapshot) => {
         uploadTaskSnapshot.ref.getDownloadURL().then((downloadURL) => {
