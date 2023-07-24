@@ -15,7 +15,6 @@ export class ReviewPageComponent {
     constructor(private api: ApiService) { 
       this.api.getReviews().subscribe((res) => {
         this.reviews = res;
-        console.log(this.reviews)
         this.isNotLoading = true;
         setTimeout(() => {this.isLoading = false}, 1000);
       });
