@@ -104,4 +104,5 @@ module.exports = {
   getReviews,
   getLatestReviews,
   postReview,
+  updateUserInfo
 };
