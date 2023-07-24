@@ -56,6 +56,50 @@ async function postReview(req, res) {
   }
 }
 
+async function updateUserInfo(req, res) {
+    const {uid, username,userimage } = req.body;
+    if(username && userimage){
+        //find all reviews with uid and update username and userimage
+        try{
+            const reviews = await Review.find({uid: uid});
+            reviews.forEach(review => {
+                review.username = username;
+                review.userimage = userimage;
+                review.save();
+            });
+            res.status(200).json({message: "success"});
+        }catch(err){
+            res.status(500).json({error: err});
+        }
+    }
+    if(username && !userimage){
+        //find all reviews with uid and update username
+        try{
+            const reviews = await Review.find({uid: uid});
+            reviews.forEach(review => {
+                review.username = username;
+                review.save();
+            });
+            res.status(200).json({message: "success"});
+        }catch(err){
+            res.status(500).json({error: err});
+        }
+    }
+    if(!username && userimage){
+        //find all reviews with uid and update userimage
+        try{
+            const reviews = await Review.find({uid: uid});
+            reviews.forEach(review => {
+                review.userimage = userimage;
+                review.save();
+            });
+            res.status(200).json({message: "success"});
+        }catch(err){
+            res.status(500).json({error: err});
+        }
+    }
+}
+
 module.exports = {
   getReviews,
   getLatestReviews,
