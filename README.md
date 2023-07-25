@@ -43,17 +43,17 @@ const mongo_uri = 'mongodb://127.0.0.1:27017/elteck';
 ![footer view](https://github.com/dannykamenov/Softuni-Angular-Project/assets/46850144/5ebd71a3-d59f-4120-80ef-652305db2984)
 * Home Page - Not Logged In!
 ![homepage on large desktop](https://github.com/dannykamenov/Softuni-Angular-Project/assets/46850144/b5164aef-94ac-44de-8821-03c3470cbc8a)
-* Register Page
+* Register Page\
 ![register form](https://github.com/dannykamenov/Softuni-Angular-Project/assets/46850144/36ffb096-6bbf-44b0-b75a-1e33e77b94e3)
-* Login Page
+* Login Page\
 ![login form](https://github.com/dannykamenov/Softuni-Angular-Project/assets/46850144/f8cb4b0f-92dd-44cc-b881-7edabd0694bf)
-* Profile Page
+* Profile Page\
 ![my profile view](https://github.com/dannykamenov/Softuni-Angular-Project/assets/46850144/1c9ae475-73e5-4f7e-8916-7fba5faec048)
-* Change Profile Page
+* Change Profile Page\
 ![change profile view](https://github.com/dannykamenov/Softuni-Angular-Project/assets/46850144/4549dd21-89b3-4739-bf01-73a7ca124306)
 * Review Page + Logged In Header!
 ![review page view](https://github.com/dannykamenov/Softuni-Angular-Project/assets/46850144/0445af39-f91a-4b02-97b5-a1e46aa2eab0)
-* Interactive Review form
+* Interactive Review form\
 ![interactive review form](https://github.com/dannykamenov/Softuni-Angular-Project/assets/46850144/1b62b31d-40db-46a9-b37f-41c635981ef6)
 
 ## License
