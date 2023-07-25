@@ -5,7 +5,7 @@
 * First, access each folder (elteck-angular-final & elteck-server) seperately in the terminal of your choice.
 * Run `npm i` or `npm install` to download all the necessary packages.
 * Run `ng serve` in the elteck-angular-final folder to start the front-end part of the project.
-* NOTE: The back-end part of the project is originally connected to a Mongo DB database hosted on Mongo Atlas. If you want to use your own database, you can change the connection string in the index.js file in the elteck-server folder.\
+* NOTE: The back-end part of the project is originally connected to a Mongo DB database hosted on Mongo Atlas. If you want to use your own database, you can change the connection string in the index.js file in the elteck-server folder.
 
 **COPY PASTE THE CODE BELOW IN THE INDEX.JS FILE IN THE ELTECK-SERVER FOLDER:**
 ```javascript
