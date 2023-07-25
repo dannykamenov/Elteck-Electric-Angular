@@ -67,9 +67,9 @@
   <section class="overlap-contact-section">
     <div class="contact-form">
       <div class="container">
-        <h2 class="container-head">My Profile</h2>
         <div class="displayTable" *ngIf="authService.userData as user">
           <ng-container *ngIf="!isUpdating">
+            <h2 class="container-head">My Profile</h2>
             <img
               class="align-self-start mr-5 img-thumbnail rounded-circle"
               src="{{
@@ -105,6 +105,7 @@
             
           </ng-container>
           <ng-container *ngIf="isUpdating">
+            <h2 class="container-head">Change Profile</h2>
             <img
               class="align-self-start mr-5 img-thumbnail rounded-circle"
               src="{{
