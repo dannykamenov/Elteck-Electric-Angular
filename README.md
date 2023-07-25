@@ -4,5 +4,14 @@
 ## How to set up?
 * First, access each folder (elteck-angular-final & elteck-server) seperately in the terminal of your choice.
 * Run `npm i` or `npm install` to download all the necessary packages.
+* Run `ng serve` in the elteck-angular-final folder to start the front-end part of the project.
+NOTE: The back-end part of the project is originally connected to a Mongo DB database hosted on Mongo Atlas. If you want to use your own database, you can change the connection string in the index.js file in the elteck-server folder.
+* Run `npm start` in the elteck-server folder to start the back-end part of the project.
+* Enjoy!
+
+## How to use?
+* The project is a website for a company that offers electrical services. 
+* For non-registered users, the website offers a home page, an about page, a register page and a login page.
+* For registered users, in addition to the above, the website offers a gallery page, contact page, review page, create review page and a profile page.
 
 
