@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/shared/services/api.service';
+import { getReview } from 'src/app/shared/services/getReview';
 
 @Component({
   selector: 'app-home',
@@ -12,4 +15,13 @@ export class HomeComponent {
   mouseOvered3: boolean = false;
   mouseOvered4: boolean = false;
   mouseOvered5: boolean = false;
+
+  reviews: undefined | getReview[];
+  stars: undefined | number[] = [1, 2, 3, 4, 5];
+
+    constructor(private api: ApiService, private router: Router) { 
+      this.api.getReviews().subscribe((res) => {
+        this.reviews = res;
+      });
+    }
 }

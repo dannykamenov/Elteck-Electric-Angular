@@ -20,5 +20,5 @@ export class ReviewPageComponent {
         this.isNotLoading = true;
         setTimeout(() => {this.isLoading = false}, 1000);
       });
-  }
+    }
 }
