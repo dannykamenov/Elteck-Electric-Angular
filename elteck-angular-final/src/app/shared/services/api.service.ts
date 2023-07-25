@@ -17,4 +17,8 @@ export class ApiService {
   getReviews() {
     return this.http.get<getReview[]>('http://localhost:3000/api/reviews');
   }
+
+  getLatestReviews() {
+    return this.http.get<getReview[]>('http://localhost:3000/api/latest?limit=3');
+  }
 }

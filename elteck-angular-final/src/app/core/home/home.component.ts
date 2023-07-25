@@ -20,7 +20,7 @@ export class HomeComponent {
   stars: undefined | number[] = [1, 2, 3, 4, 5];
 
     constructor(private api: ApiService, private router: Router) { 
-      this.api.getReviews().subscribe((res) => {
+      this.api.getLatestReviews().subscribe((res) => {
         this.reviews = res;
       });
     }

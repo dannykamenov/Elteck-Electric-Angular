@@ -182,10 +182,10 @@
       <ng-container *ngFor="let review of reviews">
         <div class="review-card">
           <div class="reviewer-photo">
-            <img src="/assets/homeFigures/reviewer1.png" alt="" />
+            <img src="{{review.userimage}}" alt="" />
           </div>
           <div class="reviewer-info">
-            <h1 class="reviewer-name">John Doe</h1>
+            <h1 class="reviewer-name">{{review.username}}</h1>
             <h2 class="reviewer-title"><ng-container *ngFor="let i of stars">
               <i
                 class="fa-solid fa-star"
@@ -195,10 +195,7 @@
           </div>
           <div class="reviewer-review">
             <p>
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptatum, quibusdam, quia, voluptate voluptatibus quod
-              exercitationem quos voluptas quas quibusdam, quia, voluptate
-              voluptatibus quod exercitationem quos voluptas quas."
+              {{review.content}}
             </p>
           </div>
         </div>
