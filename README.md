@@ -56,6 +56,8 @@ const mongo_uri = 'mongodb://127.0.0.1:27017/elteck';
 * Interactive Review form\
 ![interactive review form](https://github.com/dannykamenov/Softuni-Angular-Project/assets/46850144/1b62b31d-40db-46a9-b37f-41c635981ef6)
 
+* Static pages as well as gallery page won't be mentioned here!
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
