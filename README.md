@@ -1,3 +1,8 @@
+
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/dannykamenov/Softuni-Angular-Project)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/dannykamenov/Softuni-Angular-Project)
+![GitHub repo size](https://img.shields.io/github/repo-size/dannykamenov/Softuni-Angular-Project)
+
 # Elteck Electric Angular Project
  This is a project for SoftUni's Final Angular Exam! It is a completely original idea, built for a real client. This repo comes with two folders. One contains the front-end part of the project with TypeScript, SCSS and Angular. The server folder contains the back-end part - written in Node JS, Express.js and using Mongo DB as a database service. The project also uses Firebase's authentication api and storage api.
 
@@ -25,6 +30,12 @@ const mongo_uri = 'mongodb://127.0.0.1:27017/elteck';
 * For non-registered users, the website offers a home page, an about page, a register page and a login page.
 * For registered users, in addition to the above, the website offers a gallery page, contact page, review page, create review page and a profile page.
 
+## Features
+* The website offers a fully functional authentication system with register, login, logout and profile pages. Also supports Google authentication.
+* The website offers a fully functional review system for authenticated users.
+* Users can change their profile picture and display name from the profile page.
+* Upon registration, users receive a confirmation email.
 
-
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
