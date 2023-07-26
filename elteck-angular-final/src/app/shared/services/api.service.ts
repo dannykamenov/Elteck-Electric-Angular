@@ -22,7 +22,7 @@ export class ApiService {
     return this.http.get<getReview[]>('https://elteck-server.onrender.com/api/latest?limit=3');
   }
 
-  updateUserInfo(name: string, uid: string | undefined) {
-    return this.http.post('https://elteck-server.onrender.com/api/update', {name: name, uid: uid});
+  updateUserInfo(review: any) {
+    return this.http.post<Review>('https://elteck-server.onrender.com/api/update', review);
   }
 }

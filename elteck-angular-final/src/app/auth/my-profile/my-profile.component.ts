@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { ApiService } from 'src/app/shared/services/api.service';
+import { Review } from 'src/app/shared/services/review';
 /* import {
   Storage,
   ref,
@@ -76,7 +77,11 @@ export class MyProfileComponent {
 
     if(name) {
       const uid: string | undefined = auth.currentUser?.uid;
-      this.api.updateUserInfo(name, uid ).subscribe((res) => {
+      const review: any = {
+        uid: uid,
+        username: name,
+      }
+      this.api.updateUserInfo(review).subscribe((res) => {
       });
     } 
 
