@@ -25,4 +25,8 @@ export class ApiService {
   updateUserInfo(review: any) {
     return this.http.post<Review>('https://elteck-server.onrender.com/api/update', review);
   }
+
+  getAverageRating() {
+    return this.http.get<any>('https://elteck-server.onrender.com/api/average');
+  }
 }

@@ -18,10 +18,14 @@ export class HomeComponent {
 
   reviews: undefined | getReview[];
   stars: undefined | number[] = [1, 2, 3, 4, 5];
+  averageRating: undefined | number;
 
     constructor(private api: ApiService, private router: Router) { 
       this.api.getLatestReviews().subscribe((res) => {
         this.reviews = res;
+      });
+      this.api.getAverageRating().subscribe((res) => {
+        this.averageRating = res.averageRating;
       });
     }
 }

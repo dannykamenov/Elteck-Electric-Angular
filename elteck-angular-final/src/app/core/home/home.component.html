@@ -74,6 +74,11 @@
             <p>Satisfied Customers</p>
           </div>
           <div class="stat-card">
+            <ng-container *ngIf="averageRating">
+              <h2>{{averageRating}}-Star Reviews</h2>
+              <p>Real Reviews</p>
+            </ng-container>
+            
             <h2>5-Star Rating</h2>
             <p>*HomeStar Reviews</p>
           </div>

@@ -66,9 +66,21 @@ async function updateUserInfo(req, res) {
     }
 }
 
+async function averageRating(req,res) {
+    try {
+        const reviews = await Review.find();
+        const ratings = reviews.map(review => review.rating);
+        const averageRating = ratings.reduce((acc, curr) => acc + curr) / ratings.length;
+        res.status(200).json({averageRating});
+    } catch (err) {
+        res.status(500).json({ error: err });
+    }
+}
+
 module.exports = {
   getReviews,
   getLatestReviews,
   postReview,
-  updateUserInfo
+  updateUserInfo,
+  averageRating
 };
