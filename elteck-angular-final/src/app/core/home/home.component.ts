@@ -26,6 +26,9 @@ export class HomeComponent {
       });
       this.api.getAverageRating().subscribe((res) => {
         this.averageRating = res.averageRating;
+        if(this.averageRating) {
+          this.averageRating = Math.round(this.averageRating*10)/10;
+        }
       });
     }
 }

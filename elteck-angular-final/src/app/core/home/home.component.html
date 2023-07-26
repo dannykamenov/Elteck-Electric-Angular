@@ -75,12 +75,13 @@
           </div>
           <div class="stat-card">
             <ng-container *ngIf="averageRating">
-              <h2>{{averageRating}}-Star Reviews</h2>
-              <p>Real Reviews</p>
+              <h2 style="font-size: 30px;">{{averageRating}}<i class="fa-solid fa-star active"></i> Rating</h2>
+              <p style="font-size: 20px;">Real Reviews</p>
             </ng-container>
-            
+            <ng-container *ngIf="!averageRating">            
             <h2>5-Star Rating</h2>
             <p>*HomeStar Reviews</p>
+            </ng-container>
           </div>
         </div>
       </div>
