@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { ApiService } from 'src/app/shared/services/api.service';
 /* import {
   Storage,
   ref,
@@ -16,8 +17,9 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 })
 export class MyProfileComponent {
   isUpdating: boolean = false;
-  constructor(public authService: AuthService, public storage: AngularFireStorage) {}
+  constructor(public authService: AuthService, public storage: AngularFireStorage, public api: ApiService) {}
   public file: any;
+  downloadUrlLink: any;
 
   changeDisplay() {
     this.isUpdating = true;
@@ -58,10 +60,12 @@ export class MyProfileComponent {
       });
       uploadTask.then((uploadTaskSnapshot) => {
         uploadTaskSnapshot.ref.getDownloadURL().then((downloadURL) => {
+          this.downloadUrlLink = downloadURL;
           updateProfile(auth.currentUser!, {
             displayName: name ? name : auth.currentUser?.displayName,
             photoURL: downloadURL,
           });
+
         });
       });
     }
@@ -69,6 +73,14 @@ export class MyProfileComponent {
     updateProfile(auth.currentUser!, {
       displayName: name ? name : auth.currentUser?.displayName,
     });
+
+    if(name) {
+      const uid: string | undefined = auth.currentUser?.uid;
+      this.api.updateUserInfo(name, uid ).subscribe((res) => {
+      });
+    } 
+
+    this.downloadUrlLink = null;
     this.isUpdating = false;
     this.file = null;
   }
