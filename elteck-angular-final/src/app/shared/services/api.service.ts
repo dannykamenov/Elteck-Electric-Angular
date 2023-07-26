@@ -11,14 +11,14 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   addReview(review: Review) {
-    return this.http.post<Review>('http://localhost:3000/api/reviews', review);
+    return this.http.post<Review>('https://elteck-server.onrender.com/api/reviews', review);
   }
 
   getReviews() {
-    return this.http.get<getReview[]>('http://localhost:3000/api/reviews');
+    return this.http.get<getReview[]>('https://elteck-server.onrender.com/api/reviews');
   }
 
   getLatestReviews() {
-    return this.http.get<getReview[]>('http://localhost:3000/api/latest?limit=3');
+    return this.http.get<getReview[]>('https://elteck-server.onrender.com/api/latest?limit=3');
   }
 }
