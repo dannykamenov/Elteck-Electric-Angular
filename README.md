@@ -26,7 +26,7 @@ const mongo_uri = 'mongodb://127.0.0.1:27017/elteck';
 * Enjoy!
 
 **UPDATE: Back-End server is no longer needed! It is now hosted on Render.com ! If you still wish to host locally, copy paste the above, but as an additional step follow this guide**
-* Access elteck-angular-final/src/app/shared/services/api.service.ts
+* Paste in terminal `cd elteck-angular-final/src/app/shared/services/api.service.ts`
 * Paste the following:
 ```typescript
 import { Injectable } from '@angular/core';
