@@ -40,7 +40,7 @@ export class PostReviewComponent {
   postReview(title: string, description: string) {
     const auth = getAuth();
     const isVerified = auth.currentUser?.emailVerified;
-    if(isVerified) {
+    if(isVerified && this.saveRating > 0) {
       const review: Review = {
         uid: auth.currentUser?.uid,
         title: title,
