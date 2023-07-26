@@ -2,8 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
-const config = require('./mongodb');
-const mongo_uri = config.url;
+const mongo_uri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/elteck';
 const router = require('./router/router');
 
 
