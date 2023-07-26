@@ -25,6 +25,37 @@ const mongo_uri = 'mongodb://127.0.0.1:27017/elteck';
 * Run `npm start` in the elteck-server folder to start the back-end part of the project.
 * Enjoy!
 
+**UPDATE: Back-End server is no longer needed! It is now hosted on Render.com ! If you still wish to host locally, copy paste the above, but as an additional step follow this guide**
+* Access elteck-angular-final/src/app/shared/services/api.service.ts
+* Paste the following:
+```typescript
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Review } from './review';
+import { getReview } from './getReview';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+
+  constructor(private http: HttpClient) { }
+
+  addReview(review: Review) {
+    return this.http.post<Review>('https://localhost:3000/api/reviews', review);
+  }
+
+  getReviews() {
+    return this.http.get<getReview[]>('https://localhost:3000/api/reviews');
+  }
+
+  getLatestReviews() {
+    return this.http.get<getReview[]>('https://localhost:3000/api/latest?limit=3');
+  }
+}
+```
+* Enjoy!
+
 ## How to use?
 * The project is a website for a company that offers electrical services. 
 * For non-registered users, the website offers a home page, an about page, a register page and a login page.
