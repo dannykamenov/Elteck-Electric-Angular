@@ -25,6 +25,8 @@ const mongo_uri = 'mongodb://127.0.0.1:27017/elteck';
 * Run `npm start` in the elteck-server folder to start the back-end part of the project.
 * Enjoy!
 
+**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**
+
 **UPDATE: Back-End server is no longer needed! It is now hosted on Render.com ! If you still wish to host locally, copy paste the above, but as an additional step follow this guide**
 * Paste in terminal `cd elteck-angular-final/src/app/shared/services/api.service.ts`
 * Paste the following:
