@@ -29,4 +29,8 @@ export class ApiService {
   getAverageRating() {
     return this.http.get<any>('https://elteck-server.onrender.com/api/average');
   }
+
+  getMyReviews(uid: any) {
+    return this.http.get<getReview[]>('https://elteck-server.onrender.com/api/myreviews', {params: {uid: uid}});
+  }
 }
