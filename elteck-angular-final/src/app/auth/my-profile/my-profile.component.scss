@@ -195,6 +195,31 @@ input[type="file"] {
     justify-content: space-between;
 }
 
+.review-container {
+  width: 100%;
+  justify-content: center;
+}
+
+.view-reviews {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4285F4;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  margin-bottom: 10px;
+  flex-basis:100%;
+}
+
+.view-reviews:hover {
+  background-color: black;
+  color: #4285F4
+}
+
 @media screen and (max-height: 1000px) {
   .contact-us-section {
     height: 70vh;
@@ -227,6 +252,13 @@ input[type="file"] {
   .overlap-contact-section {
     left: 35%;
     width: 30%;
+  }
+  .contact-us-section {
+    height: 100vh;
+  }
+
+  main {
+    overflow: hidden;
   }
 }
 
