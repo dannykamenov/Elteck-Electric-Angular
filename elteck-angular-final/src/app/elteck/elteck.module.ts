@@ -24,7 +24,8 @@ import { MyReviewsComponent } from './my-reviews/my-reviews.component';
   exports: [
     GalleryComponent,
     ReviewPageComponent,
-    PostReviewComponent
+    PostReviewComponent,
+    MyReviewsComponent
   ]
 })
 export class ElteckModule { }

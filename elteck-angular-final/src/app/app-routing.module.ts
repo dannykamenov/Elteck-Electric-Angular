@@ -13,6 +13,7 @@ import { GalleryComponent } from './elteck/gallery/gallery.component';
 import { AuthGuard2 } from './shared/guard/verified.guard'
 import { ReviewPageComponent } from './elteck/review-page/review-page.component';
 import { PostReviewComponent } from './elteck/post-review/post-review.component';
+import { MyReviewsComponent } from './elteck/my-reviews/my-reviews.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: HomeComponent, data: {title: 'Home'}},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'gallery', component: GalleryComponent, data: {title: 'Gallery'}, canActivate: [AuthGuard]},
   {path: 'reviews', component: ReviewPageComponent, data: {title: 'Reviews'}, canActivate: [AuthGuard]},
   {path: 'create-review', component: PostReviewComponent, data: {title: 'Create Review'}, canActivate: [AuthGuard]},
+  {path: 'my-reviews', component: MyReviewsComponent, data: {title: 'My Reviews'}, canActivate: [AuthGuard]},
   {path: '**', redirectTo: ''}
   
 ];
