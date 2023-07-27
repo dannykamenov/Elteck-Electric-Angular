@@ -77,6 +77,16 @@ async function averageRating(req,res) {
     }
 }
 
+async function getMyReviews(req, res) {
+    const {uid} = req.params;
+    try {
+        const reviews = await Review.find({uid});
+        res.status(200).json(reviews);
+    } catch (err) {
+        res.status(500).json({ error: err });
+    }
+}
+
 module.exports = {
   getReviews,
   getLatestReviews,

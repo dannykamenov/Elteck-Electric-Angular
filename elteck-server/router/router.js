@@ -7,6 +7,7 @@ router.get('/latest', getLatestReviews);
 router.post('/reviews', postReview);
 router.post('/update', updateUserInfo)
 router.get('/average', averageRating)
+router.get('/myreviews', getMyReviews)
 
 
 module.exports = router;
