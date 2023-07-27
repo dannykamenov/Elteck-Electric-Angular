@@ -22,6 +22,7 @@ export class MyReviewsComponent {
         this.reviews = res;
         this.isLoading = false;
         this.isNotLoading = true;
+        console.log(res);
       });
     }
 }
