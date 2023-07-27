@@ -70,6 +70,10 @@ export class ApiService {
   getAverageRating() {
     return this.http.get<any>("https://localhost:3000/api/average");
   }
+
+  getMyReviews(uid: string | undefined) {
+    return this.http.get<getReview[]>(`https://localhost:3000/api/myreviews?uid=${uid}`);
+  }
 }
 ```
 
