@@ -18,10 +18,7 @@ export class MyReviewsComponent {
     constructor(private api: ApiService, private router: Router) { 
       const auth = getAuth();
       const uid: string | undefined = auth.currentUser?.uid;
-      const review: any = {
-        uid: uid,
-      }
-      this.api.getMyReviews(review).subscribe((res) => {
+      this.api.getMyReviews(uid).subscribe((res) => {
         console.log(res);
         this.isLoading = false;
         this.isNotLoading = true;
