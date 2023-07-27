@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { getReview } from 'src/app/shared/services/getReview';
 
@@ -12,16 +11,23 @@ import { getReview } from 'src/app/shared/services/getReview';
 export class MyReviewsComponent {
   isLoading = true;
   isNotLoading = false;
-  reviews!: getReview[];
+  reviews: getReview[] | undefined;
   stars: undefined | number[] = [1, 2, 3, 4, 5];
+  userId: string | undefined;
 
-    constructor(private api: ApiService, private router: Router) { 
+
+    constructor(private api: ApiService) { 
       const auth = getAuth();
-      const uid: string | undefined = auth.currentUser?.uid;
-      this.api.getMyReviews(uid).subscribe((res) => {
-        console.log(res);
-        this.isLoading = false;
-        this.isNotLoading = true;
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          this.userId = user.uid;
+          this.api.getMyReviews(this.userId).subscribe((res) => {
+            this.reviews = res;
+            this.isNotLoading = true;
+            setTimeout(() => {this.isLoading = false}, 1000);
+          });
+        }
       });
     }
+
 }
