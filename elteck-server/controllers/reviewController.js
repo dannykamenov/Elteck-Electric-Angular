@@ -92,5 +92,6 @@ module.exports = {
   getLatestReviews,
   postReview,
   updateUserInfo,
-  averageRating
+  averageRating,
+  getMyReviews
 };

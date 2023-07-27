@@ -1,4 +1,4 @@
-const { getReviews, getLatestReviews, postReview, updateUserInfo, averageRating } = require('../controllers/reviewController');
+const { getReviews, getLatestReviews, postReview, updateUserInfo, averageRating, getMyReviews } = require('../controllers/reviewController');
 
 const router = require('express').Router();
 
