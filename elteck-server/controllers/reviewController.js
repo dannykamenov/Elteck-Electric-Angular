@@ -79,7 +79,6 @@ async function averageRating(req,res) {
 
 async function getMyReviews(req, res) {
     const uid = req.query.uid;
-    console.log(uid, req.query)
     try {
         const reviews = await Review.find({uid});
         res.status(200).json(reviews);

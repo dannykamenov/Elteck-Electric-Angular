@@ -14,7 +14,7 @@ export class MyReviewsComponent {
   reviews: getReview[] | undefined;
   stars: undefined | number[] = [1, 2, 3, 4, 5];
   userId: string | undefined;
-
+  noReviews: boolean = false;
 
     constructor(private api: ApiService) { 
       const auth = getAuth();
@@ -22,6 +22,9 @@ export class MyReviewsComponent {
         if (user) {
           this.userId = user.uid;
           this.api.getMyReviews(this.userId).subscribe((res) => {
+            if(res.length === 0) {
+              this.noReviews = true;
+            }
             this.reviews = res;
             this.isNotLoading = true;
             setTimeout(() => {this.isLoading = false}, 1000);
