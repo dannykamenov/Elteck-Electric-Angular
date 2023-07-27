@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Review } from './review';
 import { getReview } from './getReview';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class ApiService {
     return this.http.get<any>('https://elteck-server.onrender.com/api/average');
   }
 
-  getMyReviews(uid: any) {
-    return this.http.get<getReview[]>('https://elteck-server.onrender.com/api/myreviews', {params: {uid: uid}});
+  getMyReviews(review: any) {
+    return this.http.get<getReview[]>('https://elteck-server.onrender.com/api/myreviews', review);
   }
 }

@@ -12,17 +12,19 @@ import { getReview } from 'src/app/shared/services/getReview';
 export class MyReviewsComponent {
   isLoading = true;
   isNotLoading = false;
-  reviews: undefined | getReview[];
+  reviews!: getReview[];
   stars: undefined | number[] = [1, 2, 3, 4, 5];
 
     constructor(private api: ApiService, private router: Router) { 
       const auth = getAuth();
-      const uid = auth.currentUser?.uid;
-      this.api.getMyReviews(uid).subscribe((res) => {
-        this.reviews = res;
+      const uid: string | undefined = auth.currentUser?.uid;
+      const review: any = {
+        uid: uid,
+      }
+      this.api.getMyReviews(review).subscribe((res) => {
+        console.log(res);
         this.isLoading = false;
         this.isNotLoading = true;
-        console.log(res);
       });
     }
 }
