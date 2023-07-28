@@ -99,7 +99,8 @@ textarea {
   resize: none;
 }
 
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
   display: block;
   width: 100%;
   padding: 10px;
@@ -111,13 +112,20 @@ input[type="button"] {
   font-family: "Montserrat", sans-serif;
 }
 
-input[type="button"]:hover {
+input[type="button"]:hover, input[type="submit"]:hover {
   background-color: white;
   color: black;
 }
 
 .contact-img {
   flex-basis: 49%;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  font-style: italic;
+  margin: 5px 0px;
 }
 
 @media screen and (max-height: 1000px) {
@@ -150,8 +158,8 @@ input[type="button"]:hover {
 
 @media screen and (max-width: 1500px) {
   .overlap-contact-section {
-    left: 35%;
-    width: 30%;
+    left: 33%;
+    width: 35%;
   }
 }
 

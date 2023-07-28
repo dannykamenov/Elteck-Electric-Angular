@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -12,6 +10,14 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class LoginComponent {
 
   constructor(public authService: AuthService) {}
+
+  logIn(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    const {userName, userPassword } = form.value;
+    this.authService.SignIn(userName, userPassword);
+  }
 
 
 }
