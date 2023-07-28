@@ -44,7 +44,7 @@ export class AuthService {
         }, 100);
       })
       .catch((error) => {
-        console.log(error.message)
+        return error;
       });
   }
   // Sign up with email/password
@@ -86,8 +86,8 @@ export class AuthService {
   // Sign in with Google
   GoogleAuth() {
     this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['/']);
     });
+    /* this.router.navigate(['/']); */
   }
   // Auth logic to run auth providers
 //  AuthLogin(provider: any) {
@@ -125,10 +125,13 @@ export class AuthService {
     try {
       await this.afAuth.signInWithRedirect(provider);
       const result = await this.afAuth.getRedirectResult();
+      console.log(result);
       if (result.user) {
         const user = result.user;
         this.SetUserData(user); 
-        this.router.navigate(['/']); 
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 1000);
       } else {
         this.router.navigate(['/']); 
       }
@@ -148,6 +151,7 @@ export class AuthService {
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
     };
+
     return userRef.set(userData, {
       merge: true,
     });

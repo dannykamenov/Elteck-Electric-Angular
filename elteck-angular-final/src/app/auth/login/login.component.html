@@ -74,6 +74,9 @@
                     value="Log in"
                     [disabled]="form.invalid"
                   />
+                  <ng-container *ngIf="error">
+                    <p class="error">{{error}}</p>
+                  </ng-container>
                 </div>
               </form>
               <div class="formGroup">
@@ -84,6 +87,7 @@
                 <button
                   type="button"
                   class="btn googleBtn"
+                  routerLink="/"
                   (click)="authService.GoogleAuth()"
                 >
                   <i class="fab fa-google-plus-g"></i>
