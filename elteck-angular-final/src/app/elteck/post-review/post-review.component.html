@@ -32,9 +32,13 @@
           <div class="displayTable">
               <div class="displayTableCell">
                 <div class="authBlock">
+                  <form #form="ngForm">
                   <div class="formGroup">
                     <ng-container *ngFor="let i of stars">
                         <i class="fa-solid fa-star" [ngClass]="{'active': i<=rating }" (mouseenter)="mouseEnterHandler(i)" (mouseleave)="mouseLeaveHandler()" (click)="clickHandler(i)"></i>
+                    </ng-container>
+                    <ng-container *ngIf="saveRating<=0">
+                      <p class="error">You must select a star rating!</p>
                     </ng-container>
                     
                   </div>
@@ -44,24 +48,39 @@
                       class="formControl"
                       placeholder="Title"
                       required
-                      #title
+                      #title="ngModel"
+                      ngModel
                       maxlength="50"
+                      name="Title"
                     />
+                    <ng-container *ngIf="title.touched">
+                      <p class="error" *ngIf="title.errors?.['required']">Title is required!</p>
+                      <p class="error" *ngIf="title.errors?.['maxlength']">Title cannot exceed 50 characters!</p>
+                    </ng-container>
+                    
                   </div>
                   <div class="formGroup">
                     <textarea
                       class="formControl"
                       placeholder="What did you think about us?"
                       required
-                      #review
+                      #review="ngModel"
+                      ngModel
                       maxlength="250"
+                      name="review"
                     ></textarea>
+                    <ng-container *ngIf="review.touched">
+                      <p class="error" *ngIf="review.errors?.['required']">Title is required!</p>
+                      <p class="error" *ngIf="review.errors?.['maxlength']">Title cannot exceed 250 characters!</p>
+                    </ng-container>
                   </div>
+                </form>
                   <div class="formGroup">
                     <input
                       type="button"
                       class="btn btnPrimary"
                       value="Post Review!"
+                      [disabled]="form.invalid || saveRating<=0"
                       (click)="postReview(title.value, review.value)"
                     />
                   </div>

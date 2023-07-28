@@ -132,6 +132,13 @@ input[type="button"]:hover {
     color: gold;
 }
 
+.error {
+  color: red;
+  font-size: 12px;
+  font-style: italic;
+  margin: 5px 0px;
+}
+
 @media screen and (max-height: 1000px) {
   .contact-us-section {
     height: 70vh;

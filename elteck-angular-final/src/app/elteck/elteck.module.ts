@@ -6,6 +6,7 @@ import { ReviewPageComponent } from './review-page/review-page.component';
 import { PostReviewComponent } from './post-review/post-review.component';
 import { RouterModule } from '@angular/router';
 import { MyReviewsComponent } from './my-reviews/my-reviews.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,6 +18,8 @@ import { MyReviewsComponent } from './my-reviews/my-reviews.component';
     MyReviewsComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     SharedModule,
     RouterModule
