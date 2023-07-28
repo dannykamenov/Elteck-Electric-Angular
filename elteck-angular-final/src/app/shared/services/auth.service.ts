@@ -86,9 +86,8 @@ export class AuthService {
   // Sign in with Google
   GoogleAuth() {
     this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
+      this.router.navigate(['/']);
     });
-
-    this.router.navigate(['/']);
   }
   // Auth logic to run auth providers
 //  AuthLogin(provider: any) {
@@ -134,7 +133,6 @@ export class AuthService {
         this.router.navigate(['/']); 
       }
     } catch (error) {
-      console.error(error);
     }
   }
 
