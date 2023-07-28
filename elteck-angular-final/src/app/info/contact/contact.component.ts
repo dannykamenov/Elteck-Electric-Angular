@@ -12,6 +12,7 @@ export class ContactComponent {
 
   name: string = '';
   email: string = '';
+  error: string = '';
 
   constructor(private builder: FormBuilder) { 
 
@@ -23,9 +24,14 @@ export class ContactComponent {
     }
   }
 
-  sendEmail(e: Event) {
-    e.preventDefault();
-    
+  async sendEmail(form: any) {
+    emailjs.init('QFFBEaKsQxcqCDJWB')
+    let response = await emailjs.send("service_xecc2np","template_mqmzbxv",{
+      from_name: form.name,
+      to_name: "Antoni",
+      message: form.message,
+      reply_to: form.email,
+      });
   }
 
 }

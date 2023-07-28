@@ -35,7 +35,7 @@
         <h2>Contact Form</h2>
         <form
           #form="ngForm"
-          (ngSubmit)="sendEmail($event)"
+          (ngSubmit)="sendEmail(form.value)"
         >
           <div class="form-group">
             <label for="name">Name:</label>
@@ -62,6 +62,7 @@
             </ng-container>
           </div>
           <input type="submit" value="Submit" [disabled]="form.invalid"/>
+          <p class="error" *ngIf="error">{{error}}</p>
         </form>
       </div>
     </div>
