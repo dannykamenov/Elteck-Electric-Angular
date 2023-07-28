@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
+
+  error: string = '';
+
   form = this.fb.group({
     email: [
       '',
@@ -28,29 +31,26 @@ export class RegisterComponent {
   constructor(public authService: AuthService, private fb: FormBuilder,  private router: Router) {}
 
   registerMe() {
-    if (this.form.invalid) {
-      return;
-    }
     const { email, pass: {password} = {} } = this.form.value;
     this.authService.SignUp(email!, password!).then((result) => {
       if (result) {
         let code = result.code;
         switch (code) {
           case 'auth/email-already-in-use':
-            alert('Email already in use!');
+            this.error = 'Email already in use!';
             break;
           case 'auth/invalid-email':
-            alert('Invalid email!');
+            this.error = 'Invalid email!';
             break;
           case 'auth/weak-password':
-            alert('Weak password!');
+            this.error = 'Password should be at least 6 characters!';
             break;
           default:
-            alert('Unknown error! Please contact the administrator!');
+            this.error = 'Unknown error! Please contact the administrator!';
             break;
         }
-      }else {
-        this.router.navigate(['/login']);
+      } else {
+        this.router.navigate(['/']);
       }
     });
   }

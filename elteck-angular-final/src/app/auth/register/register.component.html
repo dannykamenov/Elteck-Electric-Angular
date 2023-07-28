@@ -41,7 +41,11 @@
                     placeholder="Email Address"
 
                   />
-                  <ng-container></ng-container>
+                  <ng-container *ngIf="form.get('email')?.touched">
+                    <p class="error" *ngIf="form.get('email')?.errors?.['required']">Email is required!</p>
+                    <p class="error" *ngIf="form.get('email')?.errors?.['email']"> Please enter a valid email!</p>
+                    <p class="error" *ngIf="form.get('email')?.errors?.['minlength']">Email must be at least 6 characters long!</p>
+                  </ng-container>
                   
                 </div>
                 <ng-container formGroupName="pass">
@@ -52,7 +56,10 @@
                       placeholder="Password"
                       formControlName="password"
                     />
-                    <ng-container></ng-container>
+                    <ng-container *ngIf="form.get('pass')?.get('password')?.touched">
+                      <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['required']">Password is required!</p>
+                      <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['minlength']">Password must be at least 6 characters long!</p>
+                    </ng-container>
                   </div>
                   <div class="formGroup">
                     <input
@@ -61,13 +68,19 @@
                       placeholder="Repeat Password"
                       formControlName="rePassword"
                     />
-                    <ng-container></ng-container>
+                    <ng-container *ngIf="form.get('pass')?.get('rePassword')?.touched">
+                    <p class="error" *ngIf="form.get('pass')?.errors?.['passwordMismatch']">
+                      Repeat Password does not match password!
+                    </p>
+                    </ng-container>
                   </div>
                 </ng-container>
 
                 <div class="formGroup">
-                  <input type="button" class="btn btnPrimary" value="Sign Up" />
-                  <ng-container></ng-container>
+                  <input type="submit" class="btn btnPrimary" value="Sign Up"  [disabled]="form.invalid"/>
+                  <ng-container *ngIf="error">
+                    <p class="error">{{ error }}</p>
+                  </ng-container>
                 </div>
               </form>
               <div class="formGroup">
