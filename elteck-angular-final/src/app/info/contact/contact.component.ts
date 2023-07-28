@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { getAuth } from 'firebase/auth';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
@@ -8,19 +8,21 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
 
-  name: string = '';
-  email: string = '';
+  userDisplay: string = '';
+  userContact: string = '';
   error: string = '';
 
-  constructor(private builder: FormBuilder) { 
+  constructor() { 
+  }
 
+  ngOnInit(): void {
     const auth = getAuth();
     const user = auth.currentUser;
     if (user) {
-      this.name = user.displayName || '';
-      this.email = user.email || '';
+      this.userDisplay = user.displayName || '';
+      this.userContact = user.email || '';
     }
   }
 
