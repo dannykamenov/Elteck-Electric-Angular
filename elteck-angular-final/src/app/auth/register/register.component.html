@@ -30,57 +30,69 @@
       <div class="container">
         <h2>Register</h2>
         <div class="displayTable">
-            <div class="displayTableCell">
-              <div class="authBlock">
+          <div class="displayTableCell">
+            <div class="authBlock">
+              <form [formGroup]="form" (ngSubmit)="registerMe()">
                 <div class="formGroup">
                   <input
                     type="email"
                     class="formControl"
+                    formControlName="email"
                     placeholder="Email Address"
-                    #userEmail
-                    required
+
                   />
+                  <ng-container></ng-container>
+                  
                 </div>
+                <ng-container formGroupName="pass">
+                  <div class="formGroup">
+                    <input
+                      type="password"
+                      class="formControl"
+                      placeholder="Password"
+                      formControlName="password"
+                    />
+                    <ng-container></ng-container>
+                  </div>
+                  <div class="formGroup">
+                    <input
+                      type="password"
+                      class="formControl"
+                      placeholder="Repeat Password"
+                      formControlName="rePassword"
+                    />
+                    <ng-container></ng-container>
+                  </div>
+                </ng-container>
+
                 <div class="formGroup">
-                  <input
-                    type="password"
-                    class="formControl"
-                    placeholder="Password"
-                    #userPwd
-                    required
-                  />
+                  <input type="button" class="btn btnPrimary" value="Sign Up" />
+                  <ng-container></ng-container>
                 </div>
-                <div class="formGroup">
-                  <input
-                    type="button"
-                    class="btn btnPrimary"
-                    value="Sign Up"
-                    (click)="authService.SignUp(userEmail.value, userPwd.value)"
-                  />
-                </div>
-                <div class="formGroup">
-                  <span class="or"><span class="orInner">Or</span></span>
-                </div>
-                <!-- Continue with Google -->
-                <div class="formGroup">
-                  <button
-                    type="button"
-                    class="btn googleBtn"
-                    (click)="authService.GoogleAuth()"
-                  >
-                    <i class="fab fa-google-plus-g"></i>
-                    Continue with Google
-                  </button>
-                </div>
+              </form>
+              <div class="formGroup">
+                <span class="or"><span class="orInner">Or</span></span>
               </div>
-              <div class="redirectToLogin">
-                <span
-                  >Already have an account?
-                  <a class="redirect" routerLink="/login">Log In</a></span
+              <!-- Continue with Google -->
+              <div class="formGroup">
+                <button
+                  type="button"
+                  class="btn googleBtn"
+                  (click)="authService.GoogleAuth()"
                 >
+                  <i class="fab fa-google-plus-g"></i>
+                  Continue with Google
+                </button>
               </div>
             </div>
+            <div class="redirectToLogin">
+              <span
+                >Already have an account?
+                <a class="redirect" routerLink="/login">Log In</a></span
+              >
+            </div>
           </div>
+        </div>
       </div>
     </div>
   </section>
