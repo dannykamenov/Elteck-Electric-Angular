@@ -34,28 +34,34 @@
       <div class="container">
         <h2>Contact Form</h2>
         <form
-          action="https://formsubmit.co/3b55bcb0588162dc2e17138eeef0ff0e"
-          form="ngForm"
+          #form="ngForm"
+          (ngSubmit)="sendEmail($event)"
         >
           <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
+            <input type="text" id="name" name="name" required ngModel value="{{name}}" #name="ngModel"/>
+            <ng-container *ngIf="name.touched">
+              <p class="error" *ngIf="name.errors?.['required']">Name is required!</p>
+            </ng-container>
+            
           </div>
           <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" required ngModel value="{{email}}" #email="ngModel"/>
+            <ng-container *ngIf="email.touched">
+              <p class="error" *ngIf="email.errors?.['required']">Email is required!</p>
+            </ng-container>
           </div>
           <div class="form-group">
             <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+            <textarea id="message" name="message" required ngModel #message="ngModel" minlength="25" maxlength="250"></textarea>
+            <ng-container *ngIf="message.touched">
+              <p class="error" *ngIf="message.errors?.['required']">Message is required!</p>
+              <p class="error" *ngIf="message.errors?.['minlength']">Message must be at least 25 characters long!</p>
+              <p class="error" *ngIf="message.errors?.['maxlength']">Message must be at most 250 characters long!</p>
+            </ng-container>
           </div>
-          <input type="hidden" name="_captcha" value="false" />
-          <input
-            type="hidden"
-            name="_next"
-            value="https://elteck-electric.com/"
-          />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" [disabled]="form.invalid"/>
         </form>
       </div>
     </div>

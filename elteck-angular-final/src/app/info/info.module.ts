@@ -13,10 +13,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContactComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
     CommonModule,
     RouterModule,
-    ReactiveFormsModule,
-    FormsModule
   ],
   exports: [
     AboutComponent,

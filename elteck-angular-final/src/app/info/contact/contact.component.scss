@@ -116,6 +116,13 @@ input[type="submit"]:hover {
   flex-basis: 49%;
 }
 
+.error {
+  color: red;
+  font-size: 12px;
+  font-style: italic;
+  margin: 5px 0px;
+}
+
 @media screen and (max-height: 1000px) {
   .contact-us-section {
     height: 100vh;

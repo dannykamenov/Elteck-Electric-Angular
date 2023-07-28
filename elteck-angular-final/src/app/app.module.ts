@@ -16,6 +16,7 @@ import { AuthService } from './shared/services/auth.service';
 import { ElteckModule } from './elteck/elteck.module';
 import { FirebaseStorageService } from './shared/services/firebase-storage.service';
 import { HttpClientModule } from '@angular/common/http';
+import { InfoModule } from './info/info.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     CoreModule,
     AuthModule,
-    ElteckModule
+    ElteckModule,
+    InfoModule
   ],
   providers: [AuthService, FirebaseStorageService],
   bootstrap: [AppComponent]
