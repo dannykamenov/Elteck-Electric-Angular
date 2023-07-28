@@ -44,7 +44,7 @@ export class AuthService {
         }, 100);
       })
       .catch((error) => {
-        window.alert(error.message);
+        console.log(error.message)
       });
   }
   // Sign up with email/password
