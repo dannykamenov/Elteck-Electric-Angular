@@ -297,6 +297,11 @@ main {
   font-size: 15px;
 }
 
+.title2 {
+  font-weight: bold; 
+  font-size: 20px;
+}
+
 .reviewer-review {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
@@ -538,9 +543,14 @@ main {
     font-size: 10px;
   }
 
-  .services, .review-section {
+  .services {
     display: block;
     height: 260vh;
+  }
+
+  .review-section {
+    display: block;
+    height: 130vh;
   }
 
   .service-desc {
@@ -552,16 +562,6 @@ main {
   }
 }
 
-@media only screen and (max-height: 1000px) {
-  .service-desc {
-    font-size: 15px;
-  }
-
-  .reviewer-review {
-    font-size: 10px;
-  }
-
-}
 
 @media only screen and (max-width: 345px) {
   .quote-container {
@@ -572,8 +572,16 @@ main {
     height: 90vh;
   }
 
-  .services, .review-section {
+  .services {
     height: 280vh;
+  }
+
+  .review-card {
+    height: 85%;
+  }
+
+  .review-section {
+    height: 175vh;
   }
 
   .business-stats {
@@ -601,6 +609,33 @@ main {
   }
 }
 
+@media only screen and (max-height: 800px) {
+  .service-desc {
+    font-size: 15px;
+  }
+
+  .reviewer-review {
+    font-size: 10px;
+  }
+
+  .review-card {
+    height: 100%;
+  }
+
+  .reviewer-title {
+    font-size: 10px;
+  }
+
+  .title2 {
+    font-size: 15px;
+  }
+
+  .reviewer-name {
+    font-size: 15px;
+  }
+
+}
+
 @media only screen and (max-height: 700px) {
   .quote-container {
     height: 50vh;
@@ -611,5 +646,9 @@ main {
   }
   .services, .review-section {
     height: 280vh;
+  }
+
+  .reviewer-title {
+    font-size: 10px;
   }
 }
