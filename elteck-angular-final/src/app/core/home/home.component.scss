@@ -610,8 +610,13 @@ main {
 }
 
 @media only screen and (max-height: 800px) {
+  .service-card i {
+    font-size: 35px;
+    padding: 15px 15px;
+  }
+
   .service-desc {
-    font-size: 15px;
+    font-size: 10px;
   }
 
   .reviewer-review {
@@ -633,6 +638,7 @@ main {
   .reviewer-name {
     font-size: 15px;
   }
+
 
 }
 
