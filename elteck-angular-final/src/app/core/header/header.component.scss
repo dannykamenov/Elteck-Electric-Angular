@@ -182,10 +182,17 @@ header {
   cursor: pointer;
 }
 
+.menu-active {
+  font-size: 10px;
+}
+
 @media only screen and (max-width: 1500px) {
   .navbar-header {
     width: 100%;
     padding: 20px 20px;
+  }
+  .menu-active {
+    font-size: 10px;
   }
 }
 
@@ -209,6 +216,9 @@ header {
 
   .cta {
     padding: 9px 20px;
+    font-size: 10px;
+  }
+  .menu-active {
     font-size: 10px;
   }
 }
@@ -262,6 +272,9 @@ header {
   .footer-info-holder > iframe {
     margin-bottom: 20px;
   }
+  .menu-active {
+    font-size: 10px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -298,6 +311,9 @@ header {
     display: initial;
     margin-bottom: 20px;
   }
+  .menu-active {
+    font-size: 10px;
+  }
 }
 
 @media screen and (max-height: 450px) {
@@ -309,5 +325,8 @@ header {
     font-size: 40px;
     top: 15px;
     right: 35px;
+  }
+  .menu-active {
+    font-size: 10px;
   }
 }

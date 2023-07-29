@@ -27,19 +27,19 @@
   </div>
 </header>
 <div class="overlay" [class.overlay--active]="menuActive" >
+  <a routerLink="/"><img src="/assets/logos/LOGO.png" alt="" /></a>
   <a class="close" (click)="menuToggle()" >&times;</a>
   <div class="overlay__content" [class.opacity]="opacityActive" >
-    <a href="/"><img src="/assets/logos/LOGO.png" alt="" /></a>
-    <li><a routerLink="/about">About Us</a></li>
+    <li><a routerLink="/about" (click)="menuToggle()" class="menu-active">About Us</a></li>
     <ng-container *ngIf="isLoggedIn">
-    <li><a routerLink="/gallery">Gallery</a></li>
-    <li><a routerLink="/contact">Contact Us</a></li>
-    <li><a routerLink="/reviews">Reviews</a></li>
-    <li><a routerLink="/my-profile">My Profile</a></li>
+    <li><a routerLink="/gallery" (click)="menuToggle()" class="menu-active">Gallery</a></li>
+    <li><a routerLink="/contact" (click)="menuToggle()" class="menu-active">Contact Us</a></li>
+    <li><a routerLink="/reviews" (click)="menuToggle()" class="menu-active">Reviews</a></li>
+    <li><a routerLink="/my-profile" (click)="menuToggle()" class="menu-active">My Profile</a></li>
     <li class="logout-btn" ><a href="" (click)="authService.SignOut()">Logout</a></li>
   </ng-container>
-  <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
-  <li *ngIf="!isLoggedIn"><a routerLink="/register">Register</a></li>
+  <li *ngIf="!isLoggedIn"><a routerLink="/login" (click)="menuToggle()" class="menu-active">Login</a></li>
+  <li *ngIf="!isLoggedIn"><a routerLink="/register" (click)="menuToggle()" class="menu-active">Register</a></li>
     <a
       class="overlay-cta"
       href="https://calendly.com/elteck/30min?primary_color=fb804d"
