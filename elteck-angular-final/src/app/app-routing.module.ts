@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, PreloadAllModules, Router, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
 import { AboutComponent } from './info/about/about.component';
 import { ContactComponent } from './info/contact/contact.component';
@@ -14,6 +14,7 @@ import { AuthGuard2 } from './shared/guard/verified.guard'
 import { ReviewPageComponent } from './elteck/review-page/review-page.component';
 import { PostReviewComponent } from './elteck/post-review/post-review.component';
 import { MyReviewsComponent } from './elteck/my-reviews/my-reviews.component';
+import { Title } from '@angular/platform-browser';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: HomeComponent, data: {title: 'Home'}},
@@ -33,7 +34,26 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor(private titleService: Title, private router: Router, private activatedRoute: ActivatedRoute) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Get the current activated route
+        let route = this.activatedRoute;
+        while (route.firstChild) {
+          route = route.firstChild;
+        }
+
+        // Get the 'title' data property from the route's data
+        const title = route.snapshot.data['title'];
+
+        // Update the browser tab title
+        this.titleService.setTitle(title);
+      }
+    });
+  }
+ }
