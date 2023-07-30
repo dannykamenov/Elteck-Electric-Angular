@@ -89,11 +89,22 @@ async function getMyReviews(req, res) {
     }
 }
 
+async function deleteReview(req, res) {
+    const id = req.params.id;
+    try {
+        const review = await Review.findByIdAndDelete(id);
+        res.status(200).json(review);
+    } catch (err) {
+        res.status(500).json({ error: err });
+    }
+}
+
 module.exports = {
   getReviews,
   getLatestReviews,
   postReview,
   updateUserInfo,
   averageRating,
-  getMyReviews
+  getMyReviews,
+  deleteReview,
 };
