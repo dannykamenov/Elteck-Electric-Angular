@@ -66,12 +66,12 @@
                       required
                       #review="ngModel"
                       ngModel
-                      maxlength="250"
+                      maxlength="200"
                       name="review"
                     ></textarea>
                     <ng-container *ngIf="review.touched">
                       <p class="error" *ngIf="review.errors?.['required']">Description is required!</p>
-                      <p class="error" *ngIf="review.errors?.['maxlength']">Description cannot exceed 250 characters!</p>
+                      <p class="error" *ngIf="review.errors?.['maxlength']">Description cannot exceed 200 characters!</p>
                     </ng-container>
                   </div>
                 </form>

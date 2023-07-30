@@ -36,7 +36,10 @@ export class ReviewPageComponent {
 
     deleteReview(id: string) {
       this.api.deleteReview(id).subscribe((res) => {
-        this.router.navigate(['/reviews']);
+        //refresh page
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/reviews']);
+        });
       });
     }
 }
