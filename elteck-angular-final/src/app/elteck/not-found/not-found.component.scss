@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Space+Mono&display=swap");
+
+main {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+.contact-us-section {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.contact-us-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(6px);
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+.not-found {
+    position: absolute;
+    top: 23%;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    font-size: 150px;
+    font-weight: 900;
+    color: #fb804d;
+
+}
+
+.under {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    color: #fb804d;
+}
+
+.btn-div {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+}
+
+.btn {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    background-color: #fb804d;
+    border: black 2px solid;
+    transform: scale(1);
+}
+
+.btn:active {
+    transform: scale(0.9);
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    background-color: #fb804d;
+    border: black 2px solid;
+}
+
+
+@media screen and (max-width: 768px) {
+    .not-found {
+        font-size: 100px;
+    }
+
+    .under {
+        font-size: 30px;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    .under {
+        top: 45%;
+    }
+
+    .btn-div {
+        top: 60%;
+    }
+}

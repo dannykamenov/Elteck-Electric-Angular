@@ -7,6 +7,7 @@ import { PostReviewComponent } from './post-review/post-review.component';
 import { RouterModule } from '@angular/router';
 import { MyReviewsComponent } from './my-reviews/my-reviews.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GalleryComponent,
     ReviewPageComponent,
     PostReviewComponent,
-    MyReviewsComponent
+    MyReviewsComponent,
+    NotFoundComponent
   ],
   imports: [
     FormsModule,
@@ -28,7 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GalleryComponent,
     ReviewPageComponent,
     PostReviewComponent,
-    MyReviewsComponent
+    MyReviewsComponent,
+    NotFoundComponent
   ]
 })
 export class ElteckModule { }
