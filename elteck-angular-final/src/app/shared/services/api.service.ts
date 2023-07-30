@@ -38,4 +38,8 @@ export class ApiService {
   getMyReviews(uid: string | undefined) {
     return this.http.get<getReview[]>(`https://elteck-server.onrender.com/api/myreviews?uid=${uid}`);
   }
+
+  deleteReview(_id: string) {
+    return this.http.delete<getReview[]>(`https://elteck-server.onrender.com/api/reviews/${_id}`);
+  }
 }
