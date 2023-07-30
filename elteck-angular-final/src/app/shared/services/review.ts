@@ -7,5 +7,6 @@ export interface Review {
     useremail: string | null;
     userimage: string | null;
     isAuth: boolean;
+    isEdited: false;
 
 }

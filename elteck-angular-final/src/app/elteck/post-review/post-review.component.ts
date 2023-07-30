@@ -51,6 +51,7 @@ export class PostReviewComponent {
         useremail: auth.currentUser?.email,
         userimage: auth.currentUser?.photoURL,
         isAuth: isVerified,
+        isEdited: false
       }
       this.api.addReview(review).subscribe(
         (res) => {

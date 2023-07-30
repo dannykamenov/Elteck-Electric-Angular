@@ -1,4 +1,5 @@
 export interface getReview {
+    _id: string;
     uid: string;
     title: string;
     content: string;
@@ -6,4 +7,5 @@ export interface getReview {
     username: string;
     useremail: string;
     userimage: string;
+    isEdited: boolean;
 }
