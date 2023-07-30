@@ -501,9 +501,14 @@ main {
     font-size: 30px;
   }
 
-  .services, .review-section {
+  .services {
     display: block;
     height: 250vh;
+  }
+
+  .review-section {
+    display: block;
+    height: 200vh;
   }
 
   .service-card, .review-card {
@@ -550,7 +555,7 @@ main {
 
   .review-section {
     display: block;
-    height: 130vh;
+    height: 200vh;
   }
 
   .service-desc {
@@ -581,7 +586,7 @@ main {
   }
 
   .review-section {
-    height: 175vh;
+    height: 200vh;
   }
 
   .business-stats {
