@@ -84,6 +84,7 @@
                       (click)="postReview(title.value, review.value)"
                     />
                   </div>
+                  <p class="error" *ngIf="error">{{error}}</p>
                 </div>
               </div>
             </div>

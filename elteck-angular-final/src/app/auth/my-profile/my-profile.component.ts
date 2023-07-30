@@ -33,6 +33,7 @@ export class MyProfileComponent {
 
   updateProfile(name: any) {
     const auth = getAuth();
+    console.log(auth)
 
 /*     if (this.file) {
       const storageRef = ref(

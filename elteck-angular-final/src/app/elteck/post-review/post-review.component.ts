@@ -13,6 +13,7 @@ export class PostReviewComponent {
   stars = [1, 2, 3, 4, 5];
   rating = 0;
   saveRating = 0;
+  error: string = '';
 
   constructor(private api: ApiService, public router: Router) { }
 
@@ -51,10 +52,14 @@ export class PostReviewComponent {
         userimage: auth.currentUser?.photoURL,
         isAuth: isVerified,
       }
-      this.api.addReview(review).subscribe((res) => {
-        console.log(res)
+      this.api.addReview(review).subscribe(
+        (res) => {
         this.router.navigate(['/reviews']);
-      });
+      }, (err) => {
+        this.error = err.error.error;
+        console.log(this.error);
+      }
+      );
     }
   }
 

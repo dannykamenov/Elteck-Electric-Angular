@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Review } from './review';
 import { getReview } from './getReview';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,11 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   addReview(review: Review) {
-    return this.http.post<Review>('https://elteck-server.onrender.com/api/reviews', review);
+    return this.http.post<Review>('https://elteck-server.onrender.com/api/reviews', review).pipe(
+      catchError((error: any) => {
+        return throwError(error);
+      })
+    )
   }
 
   getReviews() {
