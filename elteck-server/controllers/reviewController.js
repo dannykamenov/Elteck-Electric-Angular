@@ -35,6 +35,7 @@ async function postReview(req, res) {
     useremail,
     userimage,
     isAuth,
+    isEdited,
   } = req.body;
   try {
     if (isAuth) {
@@ -46,6 +47,7 @@ async function postReview(req, res) {
         username,
         useremail,
         userimage,
+        isEdited
       });
       res.status(201).json(review);
     } else {
