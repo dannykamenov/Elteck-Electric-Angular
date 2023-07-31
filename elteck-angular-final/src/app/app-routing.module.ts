@@ -16,6 +16,7 @@ import { PostReviewComponent } from './elteck/post-review/post-review.component'
 import { MyReviewsComponent } from './elteck/my-reviews/my-reviews.component';
 import { Title } from '@angular/platform-browser';
 import { NotFoundComponent } from './elteck/not-found/not-found.component';
+import { EditReviewComponent } from './elteck/edit-review/edit-review.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: HomeComponent, data: {title: 'Home'}},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'create-review', component: PostReviewComponent, data: {title: 'Create Review'}, canActivate: [AuthGuard]},
   {path: 'my-reviews', component: MyReviewsComponent, data: {title: 'My Reviews'}, canActivate: [AuthGuard]},
   {path: 'not-found', component: NotFoundComponent, data: {title: 'Not Found'}},
+  {path: 'edit-review/:id', component: EditReviewComponent, data: {title: 'Edit Review'}, canActivate: [AuthGuard]},
   {path: '**', redirectTo: 'not-found', data: {title: 'Not Found'}},
   
 ];

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { MyReviewsComponent } from './my-reviews/my-reviews.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { EditReviewComponent } from './edit-review/edit-review.component';
 
 
 
@@ -17,7 +18,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ReviewPageComponent,
     PostReviewComponent,
     MyReviewsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EditReviewComponent
   ],
   imports: [
     FormsModule,
