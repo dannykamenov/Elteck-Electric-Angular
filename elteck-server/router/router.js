@@ -1,4 +1,4 @@
-const { getReviews, getLatestReviews, postReview, updateUserInfo, averageRating, getMyReviews, deleteReview } = require('../controllers/reviewController');
+const { getReviews, getLatestReviews, postReview, updateUserInfo, averageRating, getMyReviews, deleteReview, getReview } = require('../controllers/reviewController');
 
 const router = require('express').Router();
 
@@ -9,6 +9,7 @@ router.post('/update', updateUserInfo)
 router.get('/average', averageRating)
 router.get('/myreviews', getMyReviews)
 router.delete('/reviews/:id', deleteReview);
+router.get('/reviews/:id', getReview);
 
 
 module.exports = router;

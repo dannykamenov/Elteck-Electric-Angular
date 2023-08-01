@@ -99,6 +99,16 @@ async function deleteReview(req, res) {
     }
 }
 
+async function getReview(req, res) {
+    const id = req.params.id;
+    try {
+        const review = await Review.findById(id);
+        res.status(200).json(review);
+    } catch (err) {
+        res.status(500).json({ error: err });
+    }
+}
+
 module.exports = {
   getReviews,
   getLatestReviews,
@@ -107,4 +117,5 @@ module.exports = {
   averageRating,
   getMyReviews,
   deleteReview,
+  getReview
 };

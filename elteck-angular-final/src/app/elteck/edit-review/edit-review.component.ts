@@ -15,7 +15,11 @@ export class EditReviewComponent {
   saveRating = 0;
   error: string = '';
 
-  constructor(private api: ApiService, public router: Router) { }
+  constructor(private api: ApiService, public router: Router) { 
+    this.api.getReview(this.router.url.split('/')[2]).subscribe((data: Review) => {
+      this.rating = data.rating;
+    })
+  }
 
   mouseEnterHandler(index: number) {
     if (this.saveRating === 0) {
@@ -38,29 +42,8 @@ export class EditReviewComponent {
     this.saveRating = index;
   }
 
-  postReview(title: string, description: string) {
-    const auth = getAuth();
-    const isVerified = auth.currentUser?.emailVerified;
-    if(isVerified && this.saveRating > 0) {
-      const review: Review = {
-        uid: auth.currentUser?.uid,
-        title: title,
-        content: description,
-        rating: this.saveRating,
-        username: auth.currentUser?.displayName,
-        useremail: auth.currentUser?.email,
-        userimage: auth.currentUser?.photoURL,
-        isAuth: isVerified,
-        isEdited: false
-      }
-      this.api.addReview(review).subscribe(
-        (res) => {
-        this.router.navigate(['/reviews']);
-      }, (err) => {
-        this.error = err.error.error;
-        console.log(this.error);
-      }
-      );
-    }
+  editReview(title: string, description: string) {
+
   }
+
 }

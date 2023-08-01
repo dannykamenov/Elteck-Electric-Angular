@@ -81,7 +81,7 @@
                       class="btn btnPrimary"
                       value="Post Review!"
                       [disabled]="form.invalid || saveRating<=0"
-                      (click)="postReview(title.value, review.value)"
+                      (click)="editReview(title.value, review.value)"
                     />
                   </div>
                   <p class="error" *ngIf="error">{{error}}</p>
