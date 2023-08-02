@@ -67,11 +67,11 @@ export class EditReviewComponent {
     const user = auth.currentUser;
     if (user) {
       const id = this.router.url.split('/')[2];
-      let edited = this.edited;
+      let isEdited = this.edited;
       const rating = this.saveRating;
-      if(!edited) {
-        edited = true;
-        this.api.updateReview({title, content, rating, edited, id}).subscribe((data: Review) => {
+      if(!isEdited) {
+        isEdited = true;
+        this.api.updateReview({title, content, rating, isEdited, id}).subscribe((data: Review) => {
           this.router.navigate(['/reviews']);
         })
       } else {
