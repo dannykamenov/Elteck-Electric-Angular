@@ -14,10 +14,29 @@ export class EditReviewComponent {
   rating = 0;
   saveRating = 0;
   error: string = '';
+  title: string = '';
+  content: string = '';
+  review: Review = {
+    uid: '',
+    title: '',
+    content: '',
+    rating: 0,
+    username: '',
+    useremail: '',
+    userimage: '',
+    isAuth: false,
+    isEdited: false,
+  }
+
 
   constructor(private api: ApiService, public router: Router) { 
     this.api.getReview(this.router.url.split('/')[2]).subscribe((data: Review) => {
-      this.rating = data.rating;
+      this.review = data;
+      this.rating = this.review.rating;
+      this.saveRating = this.review.rating;
+      this.title = this.review.title;
+      this.content = this.review.content;
+      console.log(this.review);
     })
   }
 

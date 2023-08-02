@@ -52,6 +52,7 @@
                       ngModel
                       maxlength="50"
                       name="Title"
+                      value="{{title}}"
                     />
                     <ng-container *ngIf="title.touched">
                       <p class="error" *ngIf="title.errors?.['required']">Title is required!</p>
@@ -68,7 +69,7 @@
                       ngModel
                       maxlength="200"
                       name="review"
-                    ></textarea>
+                    >{{content}}</textarea>
                     <ng-container *ngIf="review.touched">
                       <p class="error" *ngIf="review.errors?.['required']">Description is required!</p>
                       <p class="error" *ngIf="review.errors?.['maxlength']">Description cannot exceed 200 characters!</p>
