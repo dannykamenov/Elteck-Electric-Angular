@@ -113,11 +113,16 @@ async function updateReview(req, res) {
   const id = req.params.id;
   const { title, content, rating, isEdited } = req.body;
   try {
-    const review = await Review.findByIdAndUpdate(
-      id,
-      { title, content, rating, isEdited },
-    );
-    res.status(201).json(review);
+    if(isEdited === true) {
+      return res.status(401).json({ error: "Not authorized" });
+    } else {
+      isEdited = true;
+      const review = await Review.findByIdAndUpdate(
+        id,
+        { title, content, rating, isEdited },
+      );
+      res.status(201).json(review);
+    }
   } catch (err) {
     res.status(500).json({ error: err });
   }

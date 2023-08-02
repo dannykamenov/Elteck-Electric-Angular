@@ -46,4 +46,8 @@ export class ApiService {
   getReview(id: string) {
     return this.http.get<Review>(`https://elteck-server.onrender.com/api/reviews/${id}`);
   } 
+
+  updateReview(review: any) {
+    return this.http.put<Review>(`https://elteck-server.onrender.com/api/reviews/${review.id}`, review);
+  }
 }

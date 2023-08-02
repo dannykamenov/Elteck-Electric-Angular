@@ -62,15 +62,21 @@ export class EditReviewComponent {
     this.saveRating = index;
   }
 
-  editReview(title: string, description: string) {
+  editReview(title: string, content: string) {
     const auth = getAuth();
     const user = auth.currentUser;
     if (user) {
-      const edited = this.edited;
-      const savedRating = this.saveRating;
-      this.api.updateUserInfo({title, description, savedRating, edited}).subscribe((data: Review) => {
-        this.router.navigate(['/myreviews']);
-      })
+      const id = this.router.url.split('/')[2];
+      let edited = this.edited;
+      const rating = this.saveRating;
+      if(!edited) {
+        edited = true;
+        this.api.updateReview({title, content, rating, edited, id}).subscribe((data: Review) => {
+          this.router.navigate(['/reviews']);
+        })
+      } else {
+        this.error = 'You have already edited this review!';
+      }
     } else {
       this.error = 'You must be logged in to edit a review';
     }
