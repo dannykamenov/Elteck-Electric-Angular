@@ -109,6 +109,20 @@ async function getReview(req, res) {
     }
 }
 
+async function updateReview(req, res) {
+  const id = req.params.id;
+  const { title, content, rating, isEdited } = req.body;
+  try {
+    const review = await Review.findByIdAndUpdate(
+      id,
+      { title, content, rating, isEdited },
+    );
+    res.status(201).json(review);
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+}
+
 module.exports = {
   getReviews,
   getLatestReviews,
@@ -117,5 +131,6 @@ module.exports = {
   averageRating,
   getMyReviews,
   deleteReview,
-  getReview
+  getReview,
+  updateReview
 };
