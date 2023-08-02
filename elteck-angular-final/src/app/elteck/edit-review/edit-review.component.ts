@@ -38,6 +38,9 @@ export class EditReviewComponent {
       this.getTitle = this.review.title;
       this.getContent = this.review.content;
       this.edited = this.review.isEdited;
+      if(this.review.isEdited) {
+        router.navigate(['/reviews']);
+      }
     })
   }
 
