@@ -14,8 +14,9 @@ export class EditReviewComponent {
   rating = 0;
   saveRating = 0;
   error: string = '';
-  title: string = '';
-  content: string = '';
+  getTitle: string = '';
+  getContent: string = '';
+  edited: boolean = false;
   review: Review = {
     uid: '',
     title: '',
@@ -34,9 +35,9 @@ export class EditReviewComponent {
       this.review = data;
       this.rating = this.review.rating;
       this.saveRating = this.review.rating;
-      this.title = this.review.title;
-      this.content = this.review.content;
-      console.log(this.review);
+      this.getTitle = this.review.title;
+      this.getContent = this.review.content;
+      this.edited = this.review.isEdited;
     })
   }
 
@@ -62,7 +63,17 @@ export class EditReviewComponent {
   }
 
   editReview(title: string, description: string) {
-
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user) {
+      const edited = this.edited;
+      const savedRating = this.saveRating;
+      this.api.updateUserInfo({title, description, savedRating, edited}).subscribe((data: Review) => {
+        this.router.navigate(['/myreviews']);
+      })
+    } else {
+      this.error = 'You must be logged in to edit a review';
+    }
   }
 
 }
