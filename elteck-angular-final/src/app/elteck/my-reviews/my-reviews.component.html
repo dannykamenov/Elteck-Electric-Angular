@@ -11,6 +11,12 @@
           <ng-container *ngFor="let review of reviews">
             <div class="img">
               <i class="fa-solid fa-quote-left" style="color: #000000"></i>
+              <ng-container *ngIf="ownerChecker(review.uid)">
+                <div class="btns">
+                  <a  *ngIf="!review.isEdited" class="btn btnPrimary" routerLink="/edit-review/{{ review._id }}">Edit</a>
+                  <a class="btn btnPrimary" (click)="deleteReview(review._id)">Delete</a>
+                </div>
+              </ng-container>
               <p class="star-rating">
                 <ng-container *ngFor="let i of stars">
                   <i

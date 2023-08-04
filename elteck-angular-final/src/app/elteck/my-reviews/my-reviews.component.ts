@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { getReview } from 'src/app/shared/services/getReview';
@@ -16,7 +17,7 @@ export class MyReviewsComponent {
   userId: string | undefined;
   noReviews: boolean = false;
 
-    constructor(private api: ApiService) { 
+    constructor(private api: ApiService, private router: Router) { 
       const auth = getAuth();
       onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -31,6 +32,28 @@ export class MyReviewsComponent {
           });
         }
       });
+    }
+
+    ownerChecker(uid: string | undefined) {
+      if(uid === this.userId) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    deleteReview(id: string) {
+      const agree = confirm('Are you sure you want to delete this review?');
+      if(agree) {
+        this.api.deleteReview(id).subscribe((res) => {
+          //refresh page
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/reviews']);
+          });
+        });
+      } else {
+        return;
+      }
     }
 
 }
