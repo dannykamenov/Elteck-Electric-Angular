@@ -79,6 +79,18 @@ export class ApiService {
   getMyReviews(uid: string | undefined) {
     return this.http.get<getReview[]>(`https://localhost:3000/api/myreviews?uid=${uid}`);
   }
+
+  deleteReview(_id: string) {
+    return this.http.delete<getReview[]>(`https://localhost:3000/api/reviews/${_id}`);
+  }
+
+  getReview(id: string) {
+    return this.http.get<Review>(`https://localhost:3000/api/reviews/${id}`);
+  } 
+
+  updateReview(review: any) {
+    return this.http.put<Review>(`https://localhost:3000/api/reviews/${review.id}`, review);
+  }
 }
 ```
 
