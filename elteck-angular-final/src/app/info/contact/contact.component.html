@@ -62,7 +62,7 @@
             </ng-container>
           </div>
           <input type="submit" value="Submit" [disabled]="form.invalid"/>
-          <p class="error" *ngIf="form.invalid">Please fill all fields!</p>
+          <p class="error" *ngIf="form.invalid && message.touched">Please fill all fields!</p>
         </form>
       </div>
     </div>
