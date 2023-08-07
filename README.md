@@ -100,7 +100,7 @@ export class ApiService {
 
 - The project is a website for a company that offers electrical services.
 - For non-registered users, the website offers a home page, an about page, a register page and a login page.
-- For registered users, in addition to the above, the website offers a gallery page, contact page, review page, create review page and a profile page.
+- For registered users, in addition to the above, the website offers a gallery page, contact page, review page, create review page, profile page and a my reviews page.
 
 ## Features
 
