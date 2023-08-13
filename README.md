@@ -8,7 +8,8 @@ This is a project for SoftUni's Final Angular Exam! It is a completely original 
 
 ## Major Update!
 - The project is now hosted on Hostinger (front-end) and Render.com (back-end). This project is only for display purposes! Real one will include an admin panel as well!\
-**[Click here to view the live website!](https://test.elteck-electric.com/)**
+**[Click here to view the live website!](https://test.elteck-electric.com/)** <- Hosted on Hostinger, has some bugs with routing.
+**[Click here to view website hosted on Firebase!](https://elteck-angular-softuni.firebaseapp.com/)** 
 * If you still prefer to host locally, follow the instructions below!
 
 ## How to set up?
