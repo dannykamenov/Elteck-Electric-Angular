@@ -7,4 +7,4 @@ function adminDashboard(req, res) {
     }
 }
 
-module.exports = adminDashboard;
+module.exports = {adminDashboard};

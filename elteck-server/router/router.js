@@ -12,7 +12,7 @@ router.get('/myreviews', getMyReviews)
 router.delete('/reviews/:id', deleteReview);
 router.get('/reviews/:id', getReview);
 router.put('/reviews/:id', updateReview);
-router.post('/admin', adminDashboard)
+router.post('/admin', adminDashboard);
 
 
 module.exports = router;
