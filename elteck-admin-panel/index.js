@@ -15,6 +15,7 @@ form.addEventListener('submit', function(event) {
     .then(data => {
         // Handle the server's response here (e.g., display a message)
         console.log(data);
+        console.log('Success:', data.message);
     })
     .catch(error => {
         // Handle any errors that occurred during the fetch
