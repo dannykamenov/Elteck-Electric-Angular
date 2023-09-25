@@ -1,4 +1,5 @@
 const { getReviews, getLatestReviews, postReview, updateUserInfo, averageRating, getMyReviews, deleteReview, getReview, updateReview } = require('../controllers/reviewController');
+const { adminDashboard } = require('../controllers/adminDashboard');
 
 const router = require('express').Router();
 
