@@ -7,7 +7,7 @@ form.addEventListener('submit', function(event) {
     const formData = new FormData(form);
 
     // Send the data to the server using the fetch API
-    fetch('your-server-url', {
+    fetch('https://elteck-server.onrender.com/api/admin', {
         method: 'POST',
         body: formData
     })
