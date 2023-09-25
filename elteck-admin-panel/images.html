@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Image Upload</title>
+    <style>
+        /* Optional CSS styles for better presentation */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #image-preview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        img {
+            max-width: 100px;
+            max-height: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Multiple Image Upload</h2>
+    <form id="image-upload-form" enctype="multipart/form-data">
+        <input type="file" id="image-input" name="images[]" accept="image/*" multiple>
+        <button type="submit">Upload Images</button>
+    </form>
+    <div id="image-preview">
+        <!-- Preview of uploaded images will appear here -->
+    </div>
+    <script>
+        const imageUploadForm = document.getElementById('image-upload-form');
+        const imageInput = document.getElementById('image-input');
+        const imagePreview = document.getElementById('image-preview');
+
+
+
+        // Optional: Display selected images in the preview
+        imageInput.addEventListener('change', function() {
+            imagePreview.innerHTML = '';
+            for (const file of this.files) {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                imagePreview.appendChild(img);
+            }
+        });
+    </script>
+</body>
+</html>
