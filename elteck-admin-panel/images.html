@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="images.js" defer></script>
     <title>Multiple Image Upload</title>
     <style>
         /* Optional CSS styles for better presentation */
@@ -32,22 +33,5 @@
     <div id="image-preview">
         <!-- Preview of uploaded images will appear here -->
     </div>
-    <script>
-        const imageUploadForm = document.getElementById('image-upload-form');
-        const imageInput = document.getElementById('image-input');
-        const imagePreview = document.getElementById('image-preview');
-
-
-
-        // Optional: Display selected images in the preview
-        imageInput.addEventListener('change', function() {
-            imagePreview.innerHTML = '';
-            for (const file of this.files) {
-                const img = document.createElement('img');
-                img.src = URL.createObjectURL(file);
-                imagePreview.appendChild(img);
-            }
-        });
-    </script>
 </body>
 </html>
