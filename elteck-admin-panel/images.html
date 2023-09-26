@@ -81,11 +81,14 @@
                     getDownloadURL(snapshot.ref).then((downloadURL) => {
                     });
                     imagePreview.innerHTML = `<p>Upload complete!</p>`;
+                    imageInput.value = '';
                 });
             }
         });
 
-
+        if(localStorage.getItem('admin') === null) {
+            window.location.href = 'index.html';
+        }
 
       </script>
 </body>
