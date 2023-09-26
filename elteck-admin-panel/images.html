@@ -25,6 +25,7 @@
     </style>
 </head>
 <body>
+    <a href="index.html">GO BACK</a>
     <h2>Multiple Image Upload</h2>
     <form id="image-upload-form" enctype="multipart/form-data">
         <input type="file" id="image-input" name="images[]" accept="image/*" multiple>
@@ -89,7 +90,6 @@
         if(localStorage.getItem('admin') === null) {
             window.location.href = 'index.html';
         }
-
       </script>
 </body>
 </html>
