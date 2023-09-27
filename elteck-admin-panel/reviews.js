@@ -24,3 +24,19 @@ fetch('https://elteck-server.onrender.com/api/reviews',
     });
 })
 
+reviewDiv.addEventListener('click', function(event) {
+    if (event.target.classList.contains('delete-btn')) {
+        const id = event.target.dataset.id;
+        fetch(`https://elteck-server.onrender.com/api/reviews/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            location.reload();
+        })
+    }
+})
+
